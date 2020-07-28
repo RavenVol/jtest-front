@@ -1,0 +1,22 @@
+@import './variables.scss';
+@font-face {
+  font-family:'Digital';
+  src: url('../fonts/Digital-7 Mono.eot');
+  src: url('../fonts/Digital-7 Mono.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/Digital-7 Mono.woff2') format('woff2'),
+       url('../fonts/Digital-7 Mono.woff') format('woff'),
+       url('../fonts/Digital-7 Mono.svg#Digital-7 Mono') format('svg');
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-00A9;
+}
+
+.timer {
+  display: inline-block;
+  color: $cd_green_m !important;
+  padding: 0 5px;
+  font-family: Digital;
+  font-size: 40px;
+  text-transform: uppercase;
+}

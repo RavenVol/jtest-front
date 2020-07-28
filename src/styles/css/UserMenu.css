@@ -1,0 +1,45 @@
+.userMenu {
+  width: 100%;
+  min-height: 250px;
+  margin: 5px 0;
+  display: grid;
+  grid-template-areas: "top    title" "menu   title" "bottom title";
+  grid-template-columns: 80% 20%;
+  grid-template-rows: 1fr 3fr 1fr;
+  justify-content: start;
+  align-items: center;
+}
+.userMenu__title {
+  grid-area: title;
+  min-height: 250px;
+}
+.userMenu__buttonsList {
+  justify-self: end;
+  grid-area: menu;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.userMenu__buttonsList > li {
+  width: 100%;
+}
+.userMenu__menuBtn {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.userMenu__bottom {
+  grid-area: bottom;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*# sourceMappingURL=UserMenu.css.map */

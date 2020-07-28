@@ -1,0 +1,41 @@
+.footer {
+  width: 100%;
+}
+.footer__waveWrap {
+  width: 100%;
+  height: 7.5vw;
+  position: relative;
+  margin-bottom: -1px;
+}
+.footer__credits {
+  padding: 0 2vw;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2vw;
+  color: #ffffff30 !important;
+  transition: 300ms linear;
+}
+.footer__credits:hover {
+  color: white !important;
+}
+
+@media screen and (max-width: 450px) {
+  .footer__waveWrap {
+    height: 10vw;
+    margin-bottom: 0;
+  }
+  .footer__credits {
+    font-size: 3.5vw;
+  }
+}
+@media screen and (min-width: 451px) and (max-width: 750px) {
+  .footer__waveWrap {
+    height: 7.5vw;
+    margin-bottom: 0;
+  }
+  .footer__credits {
+    font-size: 2vw;
+  }
+}
+
+/*# sourceMappingURL=Footer.css.map */

@@ -1,0 +1,74 @@
+@import './variables.scss';
+@import './mixins.scss';
+
+.testCheck {
+  width: 100%;
+  display: grid;
+  grid-template-areas: 
+    "label message status";
+  grid-template-columns: 4.5fr 6.5fr 1fr;
+  grid-gap: 0.74vw;
+  justify-content: start;
+  align-items: start;
+
+  &--clickable {
+    cursor: pointer;
+    &:hover {
+      color: blue;
+
+      .testCheck__label {
+        color: blue;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__label {
+    grid-area: label;
+    font-size: 1.18vw !important;
+  }
+  &__message {
+    grid-area: message;
+    font-size: 1.18vw;
+  }
+  &__status {
+    grid-area: status;
+    justify-self: center;
+    align-self: center;
+    font-size: 1.18vw;
+
+    &--OK {
+      color: $cd_green_m;
+    }
+    &--Error {
+      color: red;
+    }
+    &--Warn {
+      color: yellow;
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .testCheck {
+    grid-template-columns: 37% 52% 9%;
+    grid-gap: 1%;
+    align-items: center;
+ 
+    &__label { font-size: 3.5vw !important; }
+    &__message { font-size: 4vw; }
+    &__status { font-size: 4vw; }
+  }
+}
+
+@media screen and (min-width: 451px) and (max-width: 750px) {
+  .testCheck {
+    grid-template-columns: 37% 52% 9%;
+    grid-gap: 0.5%;
+    align-items: center;
+ 
+    &__label { font-size: 2.5vw !important; }
+    &__message { font-size: 2.5vw; }
+    &__status { font-size: 2.5vw; }
+  }
+}

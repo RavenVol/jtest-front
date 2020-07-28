@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap");
+.animatedResult {
+  width: 35.5vw;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+.animatedResult__integer {
+  font-family: "Courier Prime", monospace;
+  letter-spacing: -0.15em;
+}
+.animatedResult__fractional {
+  margin-right: 0.74vw;
+  font-family: "Courier Prime", monospace;
+  letter-spacing: -0.15em;
+}
+
+/*# sourceMappingURL=AnimatedResult.css.map */

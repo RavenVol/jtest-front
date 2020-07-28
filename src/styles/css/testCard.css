@@ -1,0 +1,269 @@
+@import url("https://fonts.googleapis.com/css?family=Oswald&display=swap");
+.testCardWrap {
+  width: 16.28vw;
+  height: 18.5vw;
+  margin: 9.25vw 0 2.22vw 0;
+  position: relative;
+}
+.testCardWrap__hoverZone {
+  width: 100%;
+  height: 100%;
+}
+
+.testCard {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: 400ms linear;
+}
+.testCard__author {
+  width: auto;
+  position: absolute;
+  top: 14.8vw;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #6b6b6b;
+  font-size: 1vw;
+  white-space: nowrap;
+  transition: 400ms linear;
+}
+.testCard__testName {
+  width: 100%;
+  position: absolute;
+  top: 15.91vw;
+  color: #252525;
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+  font-size: 2.22vw;
+  transition: 400ms linear;
+}
+.testCard__summary {
+  width: 95%;
+  position: absolute;
+  left: 2.5%;
+  top: 25.91vw;
+  transition: 400ms linear;
+}
+.testCard__bottom {
+  width: 100%;
+  height: 1.48vw;
+  position: absolute;
+  top: 31.46vw;
+  color: white;
+  font-size: 1.18vw;
+  line-height: 1.48vw;
+  text-align: center;
+  letter-spacing: 0.1em;
+  border: 0 0 5px 5px;
+  transition: 400ms linear;
+}
+.testCard .summary {
+  display: grid;
+  grid-template-areas: "typeLabel typeValue" "questionLabel questionValue" "timeLabel timeValue" "retryLabel retryValue";
+  grid-template-columns: 1.1fr 0.9fr;
+  grid-gap: 0.37vw;
+  color: #252525;
+  font-size: 1.11vw;
+}
+.testCard .summary__typeLabel {
+  grid-area: typeLabel;
+}
+.testCard .summary__typeValue {
+  grid-area: typeValue;
+  justify-self: center;
+}
+.testCard .summary__questionLabel {
+  grid-area: questionLabel;
+}
+.testCard .summary__questionValue {
+  grid-area: questionValue;
+  justify-self: center;
+}
+.testCard .summary__timeLabel {
+  grid-area: timeLabel;
+}
+.testCard .summary__timeValue {
+  grid-area: timeValue;
+  justify-self: center;
+}
+.testCard .summary__retryLabel {
+  grid-area: retryLabel;
+}
+.testCard .summary__retryValue {
+  grid-area: retryValue;
+  justify-self: center;
+}
+
+.cardDecoration {
+  width: 12.58vw;
+  height: 14.8vw;
+  position: absolute;
+  top: -3.7vw;
+  left: 0;
+  border-radius: 5px 5px 5px 0;
+  box-shadow: 0px 0px 2.96vw 0 black;
+  transform: skewY(-30deg);
+  transition: 400ms linear;
+}
+.cardDecoration__string {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.cardDecoration__langString {
+  margin: 0 0.37vw;
+  color: white;
+  font-size: 1.18vw;
+  line-height: 1.48vw;
+  animation: appear 500ms linear;
+}
+.cardDecoration__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.cardDecoration__title {
+  align-self: center;
+  color: white;
+  font-size: 1.85vw;
+  line-height: 1.85vw;
+  animation: appear 500ms linear;
+}
+.cardDecoration__langList {
+  color: white;
+  font-size: 1.48vw;
+  line-height: 1.48vw;
+  animation: appear 500ms linear;
+}
+
+.BGcolors--velvet-azure {
+  background: linear-gradient(45deg, #b066fe, #66e2ff);
+}
+.BGcolors--red-yellow {
+  background: linear-gradient(45deg, red, yellow);
+}
+.BGcolors--brown-green {
+  background: linear-gradient(45deg, brown, yellowgreen);
+}
+.BGcolors--chery-olive {
+  background: linear-gradient(45deg, #9b3c2e, #b7c06f);
+}
+.BGcolors--sky-magenta {
+  background: linear-gradient(45deg, #8498af, #f5a3b7);
+}
+.BGcolors--crimson-skyblue {
+  background: linear-gradient(45deg, crimson, cornflowerblue);
+}
+.BGcolors--blueviolet-coral {
+  background: linear-gradient(45deg, blueviolet, coral);
+}
+.BGcolors--coral-cornflowerblue {
+  background: linear-gradient(45deg, coral, cornflowerblue);
+}
+.BGcolors--green-gold {
+  background: linear-gradient(45deg, green, gold);
+}
+.BGcolors--gold-hotpink {
+  background: linear-gradient(45deg, gold, hotpink);
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@media screen and (max-width: 750px) {
+  .testCardWrap {
+    width: 45vw;
+    height: 45vw;
+    margin: 3vw 0 3vw 0;
+  }
+
+  .testCard {
+    border-radius: 5px;
+  }
+  .testCard__author {
+    top: 5vw;
+    left: 0.75vw;
+    transform: translateX(0);
+    font-size: 3vw;
+  }
+  .testCard__testName {
+    top: 12vw;
+    font-size: 5vw;
+  }
+  .testCard__summary {
+    width: 95%;
+    top: 26vw;
+  }
+  .testCard__bottom {
+    height: 4vw;
+    top: 40.65vw;
+    font-size: 3vw;
+    line-height: 4vw;
+  }
+  .testCard .summary {
+    font-size: 3vw;
+  }
+
+  .cardDecoration {
+    width: 45vw;
+    height: 4vw;
+    top: 0;
+    transform: skewY(0deg);
+    border-radius: 5px 5px 0 0;
+    box-shadow: 0px 0px 0px 0 black;
+  }
+  .cardDecoration__langString {
+    margin: 0 0.37vw;
+    font-size: 3vw;
+    line-height: 4vw;
+  }
+}
+@media screen and (min-width: 751px) {
+  .testCardWrap__hoverZone:hover {
+    cursor: pointer;
+  }
+  .testCardWrap__hoverZone:hover .testCard__author {
+    top: 1.85vw;
+    left: 0.37vw;
+    transform: translateX(0);
+  }
+  .testCardWrap__hoverZone:hover .testCard__testName {
+    top: 5.18vw;
+  }
+  .testCardWrap__hoverZone:hover .testCard__summary {
+    top: 10.36vw;
+  }
+  .testCardWrap__hoverZone:hover .testCard__bottom {
+    top: 17vw;
+  }
+  .testCardWrap__hoverZone:hover .cardDecoration {
+    width: 16.28vw;
+    height: 1.48vw;
+    top: 0;
+    transform: skewY(0deg);
+    border-radius: 5px 5px 0 0;
+    box-shadow: 0px 0px 0px 0 black;
+  }
+  .testCardWrap__hoverShield {
+    width: 100%;
+    height: 9.25vw;
+    position: absolute;
+    left: 0;
+    top: -9.25vw;
+    z-index: 5;
+  }
+}
+
+/*# sourceMappingURL=testCard.css.map */

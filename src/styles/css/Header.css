@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css?family=Nothing+You+Could+Do&display=swap");
+.header {
+  width: 100%;
+  z-index: 100;
+  position: fixed;
+  top: 10px;
+  left: 0;
+}
+.header__mainMenu {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  z-index: 99;
+}
+.header__logo {
+  position: absolute;
+  top: 0;
+  z-index: 99;
+  transition: 500ms linear;
+}
+.header__logo--center {
+  left: 50%;
+  transform: translateX(-50%);
+}
+.header__logo--left {
+  left: 100px;
+}
+.header__user {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  z-index: 99;
+}
+
+.title {
+  font-family: "Nothing You Could Do";
+  font-size: 20px;
+  color: white;
+}
+
+.headerButton {
+  position: relative;
+  overflow: hidden;
+  min-width: 40px;
+  min-height: 40px;
+  box-sizing: border-box;
+  padding: 5px;
+  text-decoration: none;
+  background: none;
+  border: none;
+  border-radius: 5px;
+  display: flex;
+}
+.headerButton:after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to top right, #ffffff00 30%, #ffffffdd 50%, #ffffff00 70%);
+  background-repeat: no-repeat;
+}
+.headerButton:hover:after {
+  transition: 400ms linear;
+  top: -100%;
+}
+.headerButton--user {
+  padding: 1px;
+}
+.headerButton--user > svg, .headerButton--user > img {
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 5px !important;
+}
+.headerButton > svg, .headerButton > img {
+  width: 30px;
+  height: 30px;
+  fill: #adadad;
+  transition: 300ms linear;
+}
+.headerButton:hover > svg {
+  fill: white;
+}
+
+@media screen and (max-width: 450px) {
+  .header__logo--left {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+@media screen and (min-width: 451px) and (max-width: 750px) {
+  .header__logo--left {
+    left: 70px;
+  }
+}
+@media screen and (min-width: 1367px) {
+  .title {
+    font-size: 1.48vw;
+  }
+
+  .headerButton {
+    min-width: 2.96vw;
+    min-height: 2.96vw;
+  }
+  .headerButton--user > svg, .headerButton--user > img {
+    width: 2.66vw !important;
+    height: 2.66vw !important;
+  }
+  .headerButton > svg, .headerButton > img {
+    width: 2.22vw;
+    height: 2.22vw;
+  }
+}
+
+/*# sourceMappingURL=Header.css.map */

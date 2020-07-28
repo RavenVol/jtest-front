@@ -1,0 +1,805 @@
+@import './variables.scss';
+@import './mixins.scss';
+
+.createTestPage {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+
+  display: grid;
+  grid-template-areas: "TestPageMenu TestPageMain";
+  grid-template-columns: 22% 78%;
+
+  background-image: radial-gradient(ellipse farthest-corner at right bottom, #00000070 0%, #75662ac0 45%, #75662ac0 55%, #d8c78670 100%);
+  &__menu {
+    grid-area: TestPageMenu;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__main {
+    grid-area: TestPageMain;
+    width: 100%;
+    height: 100%;
+    margin-top: 0.37vw;
+    overflow: hidden;
+  }
+}
+
+.createTestPageMenu {
+  display: grid;
+  grid-template-areas:
+    "title menu"
+    "title questions";
+  grid-template-columns: 20% 80%;
+  grid-row-gap: 0.37vw;
+
+  &__title {
+    grid-area: title;
+    width: 100%;
+    height: 100%;
+    text-shadow: 0px 0px 2px $cd_grey_el !important;
+  }
+
+  &__Btns {
+    grid-area: menu;
+    align-self: end;
+  }
+
+  &__questionsList {
+    grid-area: questions;
+    height: 11.1vw;
+    padding: 0.37vw;
+
+    border: 1px solid $cd_dark;
+    border-radius: $defaultRadius;
+
+    background-color: #ffffff80;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    .questionItem {
+      display: grid;
+      grid-template-columns: 2fr 10fr;
+    
+      cursor: pointer;
+      
+      &:hover, &--active {
+        background-color: $cd_blue_el;
+      }
+    
+      &__number {
+        font-size: 0.9vw;
+        color: $cd_dark;
+      }
+      &__name {
+        font-size: 0.9vw;
+        color: $cd_dark;
+      }
+    }
+  }
+}
+
+.createTestPageMain {
+  display: grid;
+  grid-template-areas: 
+    "mainModule"
+    "error"
+    "controls"
+    "help";
+  grid-template-rows: auto $createTestErrorFontSize 2.96vw 15%;
+
+  &__mainModule {
+    grid-area: mainModule;
+    overflow: auto;
+  }
+
+  &__error {
+    grid-area: error;
+    justify-self: center;
+    font-size: $createTestErrorFontSize;
+    font-weight: bold;
+    color: $cd_red_d;
+  }
+
+  &__controls {
+    grid-area: controls;
+    padding: 0 0.37vw;
+
+    display: grid;
+    grid-template-columns: 1fr 37vw 1fr;
+    grid-template-areas: "left center right";
+    align-items: center;
+
+    &--next {
+      grid-area: right;
+      justify-self: end;
+    }
+
+    &--centerBlock{
+      grid-area: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      & button {
+        width: auto !important;
+        margin: 0 0.37vw;
+      }
+    }
+
+    &--prev {
+      grid-area: left;
+      justify-self: start;
+    }
+  }
+
+  &__help {
+    grid-area: help;
+
+    padding: 0.37vw 0.74vw;
+    font-size: 0.9vw;
+    color: yellow !important;
+  }  
+}
+
+.defaultModule {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-areas: 
+    "preambula"
+    "main";
+  grid-template-rows: 1.48vw auto;
+  grid-row-gap: 1.48vw;
+  padding: 0 1.48vw;
+
+  &__preambula {grid-area: preambula;}
+
+  &__langList {
+    grid-area: main;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: start;
+
+    overflow: auto;
+
+    & li {
+      display: flex;
+      align-items: center;
+    }
+
+    & input {
+      width: 1.05vw;
+      height: 1.05vw;
+    }
+  }
+
+  &__testName {
+    grid-area: main;
+    overflow: auto;
+
+    .testName {
+      display: grid;
+      grid-template-columns: 7fr 45fr 3fr;
+      grid-gap: 0.74vw;
+      margin-bottom: 0.74vw;
+    
+      &:last-child {
+        margin-bottom: 0;
+      }
+    
+      &__nameInput {
+        height: auto !important;
+        overflow: auto;
+      }
+    
+      &__delLangBtn {
+        @include defaultBtn(2.1vw, 2.1vw, 1.05vw);
+        @include blink();
+        align-self: center;
+    
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        & > svg {
+          height: 56%;
+        }
+      }
+    }
+  }
+
+  &__typeList {
+    height: 96%;
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    justify-content: space-around;
+
+    .typeItem {
+      padding: 0.37vw;
+    
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    
+      cursor: pointer;
+    
+      transition: 100ms linear;
+    
+      &__title {
+        font-size: 1.48vw;
+        margin: 0.37vw 0;
+        color: white;
+        &::first-letter {
+          text-transform: uppercase;
+        }
+      }
+    
+      &__params {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1.48vw;
+        grid-row-gap: 2px;
+        justify-content: start;
+    
+        & > p {
+          font-size: 0.9vw;
+          line-height: 1.11vw;
+          color: white;
+        } 
+        
+        & > svg {
+          width: 1.11vw;
+          height: 1.11vw;
+          align-self: center;
+        }
+      }
+    
+      &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 0.74vw 2px #000000;
+      }
+    }
+  }
+
+  &__settings {grid-area: main;}
+
+  &__check {grid-area: main;}
+}
+
+.testSettings {
+  display: grid;
+  grid-row-gap: 0.74vw;
+  grid-template-areas: 
+    "qtty"
+    "order"
+    "period"
+    "rights";
+
+  &__questionQtty {
+    grid-area: qtty;
+
+    display: grid;
+    grid-template-columns: 4fr 1fr 1fr 6fr;
+    grid-template-areas: 
+      "qttyLabel qttyInput qttyMeasure .";
+    align-items: center;
+  }
+
+  &__questionOrder {
+    grid-area: order;
+    display: grid;
+    grid-template-columns: 4fr 4fr 4fr;
+    justify-content: start;
+    justify-items: start;
+    align-items: center;
+  }
+
+  &__retryPeriod {
+    grid-area: period;
+
+    display: grid;
+    grid-template-columns: 4fr 1fr 1fr 6fr;
+    grid-template-areas: 
+      "retryLabel retryInput retryMeasure .";
+    align-items: center;
+  }
+
+  &__questionRights {
+    grid-area: rights;
+
+    display: grid;
+    grid-template-areas: 
+      "rightsLabel authorInput authorLabel anybodyInput anybodyLabel selectedInput selectedLabel selectEmail selectBtn"
+      "allowedLabel allowedList allowedList allowedList allowedList allowedList allowedList allowedList allowedList";
+    grid-template-columns: 4fr 0.2fr 1.3fr 0.2fr 1.3fr 0.2fr 1.8fr 2.6fr 0.4fr;
+    grid-template-rows: 1.48vw 4.44vw;
+    grid-row-gap: 0.74vw;
+  }
+
+  &__label {
+    &--qtty {grid-area: qttyLabel;}
+    &--retry {grid-area: retryLabel;}
+    &--rights {
+      grid-area: rightsLabel;
+      &Author {grid-area: authorLabel;}
+      &Anybody {grid-area: anybodyLabel;}
+      &Selected {grid-area: selectedLabel;}
+      &Allowed {grid-area: allowedLabel;}
+    }
+  }
+
+  &__input {
+    &--qtty {grid-area: qttyInput;}
+    &--retry {grid-area: retryInput;}
+    &--rightsAuthor {grid-area: authorInput;}
+    &--rightsAnybody {grid-area: anybodyInput;}
+    &--rightsSelected {grid-area: selectedInput;}
+    &--selectEmail {grid-area: selectEmail;}
+  }
+
+  &__measure {
+    font-size: 0.9vw;
+    line-height: 1.05vw;
+    color: $cd_dark;
+
+    &--qtty {grid-area: qttyMeasure;}
+    &--retry {grid-area: retryMeasure;}
+  }
+
+  &__Btn {
+    grid-area: selectBtn;
+    @include defaultBtn(2.22vw, 1.18vw, 1.05vw);
+    margin: 0;
+    padding: 0;
+  }
+
+  &__list {
+    width: auto;
+    height: 3.55vw;
+    padding: 0.37vw;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    background-color: $cd_brown_el;
+
+    font-size: 1.05vw;
+    color: $cd_dark;
+
+    overflow: auto;
+
+    & > li {
+      display: flex;
+    }
+
+    &--rightsAllowed {grid-area: allowedList;}
+
+    &Btn {
+      @include defaultBtn(1.05vw, 1.05vw, 0.8vw);
+      margin: 0 0.37vw 0 2px;
+      padding: 0;
+      border-radius: 50%;
+    }
+  }
+}
+
+.congrat {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__primaryInscription {
+    margin-bottom: 1.48vw;
+    font-size: 5.18vw;
+    font-style: italic;
+    letter-spacing: 0.1em;
+    color: white;
+    text-shadow: 3px 0.37vw 2px #00000080;
+  }
+  &__secondaryInscription {
+    margin-bottom: 1.48vw;
+    font-size: 2.59vw;
+    font-style: italic;
+    letter-spacing: 0.1em;
+    color: white;
+    text-shadow: 3px 0.37vw 2px #00000080;
+    text-align: center;
+  }
+  &__controls {
+    width: 100%;
+    display: grid;
+    grid-row-gap: 0.52vw;
+    justify-content: center;
+    align-items: center;    
+  }
+  &__btn {
+    @include defaultBtn(14.8vw, 2.96vw, 1.48vw);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    line-height: 2.96vw;
+    color: $cd_grey_el !important;
+    background-color: #00000077;
+
+    &:hover, &:active {
+      color: white !important;
+      background-color: #d4c70e80;
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .createTestPage {
+    display: flex;
+    flex-direction: column;
+  
+    &__menu {
+      grid-area: none;
+      height: 30vh;
+    }
+  
+    &__main {
+      height: 70vh;
+      grid-area: none;
+      height: auto;
+    }
+  }
+  
+  .createTestPageMenu {
+    display: grid;
+    grid-template-areas:
+      "menu questions";
+    grid-template-columns: 40% 60%;
+  
+    &__title { display: none; }
+  
+    &__Btns { 
+      margin-top: 55px; 
+      & button {
+        max-height: 3.5vh !important;
+      }
+    }
+  
+    &__questionsList {
+      margin-top: 55px;
+      height: 19.5vh;
+  
+      .questionItem {
+        display: grid;
+        grid-template-columns: 1.5fr 10fr;
+        grid-column-gap: 3px;
+        &__number { 
+          font-size: 4vw; 
+          justify-self: end;
+        }
+        &__name { font-size: 4vw; }
+      }
+    }
+  }
+  
+  .createTestPageMain {
+    height: 100%;
+    grid-template-rows: auto $createTestErrorFontSize 6.5vw 15%;
+  
+    &__controls {
+      grid-template-columns: 1fr 3fr 1fr;
+      
+      &--centerBlock{
+        & button {
+          width: auto !important;
+          height: 6.5vw !important;
+          padding: 0;
+        }
+      }
+    }
+  
+    &__help {
+      font-size: 2.5vw;
+    }  
+  }
+  
+  .defaultModule {
+    grid-template-rows: 12vw auto;
+    grid-row-gap: 1vw;
+    padding: 1vw 0.37vw;
+  
+    &__preambula { font-size: 5.1vw !important; }
+
+    &__langList {
+      grid-template-columns: 1fr 1fr 1fr;
+      & input {
+        width: 5vw;
+        height: 5vw;
+      }
+    }
+  
+    &__testName {
+      .testName {
+        grid-template-columns: 21% 66% 10%;
+        grid-column-gap: 2vw;
+        margin-bottom: 1vw;
+        align-items: center;
+
+        &__nameInput {
+          font-size: 4vw;
+        }
+      
+        &__delLangBtn { @include defaultBtn(8vw, 8vw, 1.05vw); }
+      }
+    }
+  
+    &__typeList {
+      height: fit-content;
+      display: flex;
+      flex-direction: column;
+  
+      .typeItem {
+        margin-top: 3vw;
+        padding: 3vw 1.48vw;
+      
+        &__title {
+          font-size: 6vw;
+          margin: 3vw 0;
+        }
+      
+        &__params {
+          grid-template-columns: 1fr 5vw;
+          grid-row-gap: 2px;
+      
+          & > p {
+            font-size: 4vw;
+            line-height: 4vw;
+            color: $cd_grey_l;
+          } 
+          
+          & > svg {
+            width: 3vw;
+            height: 3vw;
+          }
+        }
+      
+        &:hover {
+          transform: none;
+          box-shadow: 0 0 0.74vw 1px #000000;
+        }
+      }
+    }
+  }
+  
+  .testSettings {
+    grid-row-gap: 2vw;
+  
+    &__questionQtty {
+      grid-template-columns: 60% 20% 20%;
+      grid-template-areas: "qttyLabel qttyInput qttyMeasure";
+    }
+  
+    &__questionOrder { grid-template-columns: 45% 55%; }
+  
+    &__retryPeriod {
+      grid-template-columns: 60% 20% 20%;
+      grid-template-areas: "retryLabel retryInput retryMeasure";
+    }
+  
+    &__questionRights {
+      grid-template-areas: 
+        "rightsLabel rightsLabel rightsLabel rightsLabel rightsLabel rightsLabel"
+        "authorInput authorLabel anybodyInput anybodyLabel selectedInput selectedLabel" 
+        "selectEmail selectEmail selectEmail selectEmail selectEmail selectBtn"
+        "allowedLabel allowedLabel allowedList allowedList allowedList allowedList";
+      grid-template-columns: 5% 28% 5% 28% 5% 28%;
+      grid-template-rows: none;
+      grid-row-gap: 0;
+    }
+  
+    &__label {
+      &--rights { justify-self: center; }
+    }
+  
+    &__measure {
+      font-size: 4vw;
+      line-height: 4vw;
+    }
+
+    &__switchWrap { justify-self: center; }
+  
+    &__Btn { @include defaultBtn(100%, 7vw, 5vw); }
+  
+    &__list {
+      width: auto;
+      height: auto;
+      padding: 0.5vw 1vw;
+      font-size: 4vw;
+
+      &Btn { @include defaultBtn(4vw, 4vw, 2.5vw); }
+    }
+  }
+  
+  .congrat {
+    &__primaryInscription {
+      margin-bottom: 3vw;
+      font-size: 7vw;
+    }
+    &__secondaryInscription {
+      margin-bottom: 3vw;
+      font-size: 4vw;
+    }
+    &__controls {
+      grid-row-gap: 1vw;
+    }
+    &__btn {
+      @include defaultBtn(50vw, 8vw, 4vw);
+    }
+  }
+}
+
+@media screen and (min-width: 451px) and (max-width: 750px) {
+  .createTestPage {
+    grid-template-columns: 30% 70%;
+  
+    &__menu { padding-top: 20px; }
+  }
+
+  .createTestPageMenu {   
+    &__questionsList {
+      height: 12vw;
+      padding: 0.5vw;
+
+      .questionItem {
+        &__number, &__name  { font-size: 2vw; }
+      }
+    }
+  }
+  
+  .createTestPageMain {
+    height: 100%;
+    grid-template-rows: auto $createTestErrorFontSize 5vw 19%;
+  
+    &__controls { grid-template-columns: 1fr 3fr 1fr; }
+  
+    &__help {
+      padding: 0.3vw 0.74vw;
+      font-size: 1.6vw;
+    }  
+  }
+
+  .defaultModule {
+    grid-template-rows: 11vw auto;
+    grid-row-gap: 0vw;
+    padding: 0 1vw;
+  
+    &__preambula { width: 89%; }
+  
+    &__langList {
+      grid-template-columns: 1fr 1fr 1fr;
+      
+      & input {
+        width: 3.5vw;
+        height: 3.5vw;
+      }
+    }
+  
+    &__testName {
+      .testName {
+        grid-template-columns: 25% 65% 9%;
+
+        &__delLangBtn {
+          @include defaultBtn(5vw, 5vw, 4vw);
+        }
+      }
+    }
+  
+    &__typeList {
+      height: fit-content;
+      display: flex;
+      flex-direction: column;
+  
+      .typeItem {
+        margin-bottom: 1vw;
+        padding: 1vw 1.48vw;
+      
+        &__title {
+          font-size: 4vw;
+          margin: 1vw 0;
+        }
+      
+        &__params {
+          grid-template-columns: 1fr 5vw;
+          grid-row-gap: 2px;
+
+          &:last-child { margin-bottom: 2vw; }
+      
+          & > p {
+            font-size: 3vw;
+            line-height: 4vw;
+          } 
+          
+          & > svg {
+            width: 3vw;
+            height: 3vw;
+          }
+        }
+      
+        &:hover {
+          transform: none;
+          box-shadow: 0 0 0.74vw 1px #000000;
+        }
+      }
+    }
+  }
+
+  .testSettings {
+    grid-row-gap: 1vw;
+  
+    &__questionQtty {
+      grid-template-columns: 75% 14% 10%;
+      grid-template-areas: "qttyLabel qttyInput qttyMeasure";
+    }
+  
+    &__questionOrder { grid-template-columns: 60% 40%; }
+  
+    &__retryPeriod {
+      grid-template-columns: 75% 14% 10%;
+      grid-template-areas: "retryLabel retryInput retryMeasure";
+    }
+  
+    &__questionRights {
+      margin-top: 1vw;
+      grid-template-areas: 
+        "rightsLabel rightsLabel rightsLabel rightsLabel rightsLabel rightsLabel"
+        "authorInput authorLabel anybodyInput anybodyLabel selectedInput selectedLabel" 
+        "selectEmail selectEmail selectEmail selectEmail selectEmail selectBtn"
+        "allowedLabel allowedLabel allowedList allowedList allowedList allowedList";
+      grid-template-columns: 5% 28% 5% 28% 5% 28%;
+      grid-template-rows: none;
+      grid-row-gap: 0.5vw;
+    }
+  
+    &__label {
+      &--rights { justify-self: center; }
+    }
+  
+    &__measure {
+      font-size: 2vw;
+      line-height: 2vw;
+    }
+
+    &__switchWrap { justify-self: center; }
+  
+    &__Btn { @include defaultBtn(100%, 4.1vw, 3.5vw); }
+  
+    &__list {
+      width: auto;
+      height: auto;
+      padding: 0.5vw 1vw;
+      font-size: 2.5vw;
+
+      &Btn { @include defaultBtn(2.5vw, 2.5vw, 1.7vw); }
+    }
+  }
+
+  .congrat {
+    &__primaryInscription {
+      font-size: 5vw;
+    }
+    &__secondaryInscription {
+      margin: 1.5vw 0;
+      font-size: 3vw;
+    }
+    &__controls {
+      grid-row-gap: 0.75vw;
+    }
+    &__btn {
+      @include defaultBtn(30vw, 5vw, 3vw);
+    }
+  }
+  
+}

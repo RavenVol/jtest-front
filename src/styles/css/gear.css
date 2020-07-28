@@ -1,0 +1,113 @@
+.gear {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  z-index: -10;
+}
+.gear1 > svg, .gear2 > svg, .gear3 > svg, .gear4 > svg {
+  fill: #d1d1d1;
+}
+.gear1 {
+  position: absolute;
+  width: 29.6vw;
+  height: 29.6vw;
+  top: 60%;
+  left: 40%;
+}
+.gear1 > svg {
+  transform: rotateZ(0deg);
+  animation: gearAnim1 30000ms linear infinite;
+}
+@keyframes gearAnim1 {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+.gear2 {
+  position: absolute;
+  width: 9.25vw;
+  height: 9.25vw;
+  top: 58.5%;
+  left: 64.5%;
+  animation: gearAnim2 9000ms linear infinite;
+}
+@keyframes gearAnim2 {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(-360deg);
+  }
+}
+.gear3 {
+  position: absolute;
+  width: 12.21vw;
+  height: 12.21vw;
+  top: 51%;
+  left: 72.5%;
+  animation: gearAnim3 9000ms linear infinite;
+}
+@keyframes gearAnim3 {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+.gear4 {
+  position: absolute;
+  width: 32.57vw;
+  height: 32.57vw;
+  top: 3%;
+  left: 80%;
+  animation: gearAnim4 20000ms linear infinite;
+}
+@keyframes gearAnim4 {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(-360deg);
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .gear1 {
+    position: absolute;
+    width: 59.2vw;
+    height: 59.2vw;
+    top: 80%;
+    left: 20%;
+  }
+  .gear2 {
+    position: absolute;
+    width: 18.5vw;
+    height: 18.5vw;
+    top: 75.5%;
+    left: 64.5%;
+  }
+  .gear3 {
+    position: absolute;
+    width: 24.42vw;
+    height: 24.42vw;
+    top: 62%;
+    left: 72.5%;
+  }
+  .gear4 {
+    position: absolute;
+    width: 65.14vw;
+    height: 65.14vw;
+    top: 25%;
+    left: 80%;
+  }
+}
+
+/*# sourceMappingURL=gear.css.map */

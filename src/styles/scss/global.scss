@@ -1,0 +1,337 @@
+@import './variables.scss';
+@import './mixins.scss';
+
+* {
+  box-sizing: border-box;
+}
+
+.glass {
+  border: 1px inset #242424;
+  box-shadow: 0 0 4px 2px #000000;
+  color: white;
+
+  &--mate {
+    backdrop-filter: blur(4px) grayscale(100%);
+  }
+
+  &--dark {
+    background-color: #000000aa;
+  }
+
+  &--middle {
+    background-color: #00000077;
+  }
+
+  &--light {
+    background-color: #ffffffdd;
+  }
+
+  &--greenBottle {
+    background-color: $cd_greenBottle;
+  }
+
+  &--yellow {
+    background-color: #d4c70e80;
+  }
+
+  &--blue {
+    background-color: #0e6ad480; //#0eacd480
+  }
+
+  &--blue-deep {
+    background-color: #003c80a8;
+  }
+
+  &--blue-light {
+    background-color: #6193cc80;
+  }
+
+  &--red {
+    background-color: #ff000080;
+  }
+}
+
+.windowTitle { 
+  @include windowTitle(0, 30px); // windowTitle($margin-bottom, $font-size)
+}
+
+.preambula {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+
+  color: $cd_grey_d;
+}
+
+.menuBtn {
+  @include defaultBtn(100%, 30px, 14px); // defaultBtn($width, $height, $fontSize)
+  @include blink();
+
+  margin: 2px 0;
+  padding: 0 15px;
+
+  box-shadow: 0 1px 2px 1px #000000;
+
+  color: $cd_grey_l;
+
+  &--left {
+    border-right: none;
+    border-radius: $defaultRadius 0 0 $defaultRadius;
+  }
+
+  &--right {
+    border-left: none;
+    border-radius: 0 $defaultRadius $defaultRadius 0;
+  }
+
+  &:hover {
+    color: white;
+  }
+
+  &:active {
+    border: 1px outset #242424;
+  }
+}
+
+.controlBtn {
+  @include defaultBtn(100px, 30px, 16px); // defaultBtn($width, $height, $fontSize)
+  @include blink();
+}
+
+.BtnColors {
+  &--blue {
+    background-color: $cd_blue_l;
+    color: white;
+
+    &:hover, &:focus {
+      background-color: $cd_blue_m;
+    }
+  }
+
+  &--green {
+    background-color: $cd_green_el;
+    color: white;
+    
+    &:hover, &:focus {
+      background-color: $cd_green_l;
+    }
+  }
+
+  &--red {
+    background-color: $cd_red_el;
+    color: white;
+    
+    &:hover, &:focus {
+      background-color: $cd_red_l;
+    }
+  }
+
+  &--disabled {
+    cursor: default;
+    background-color: $cd_grey_l;
+    color: white;
+  }
+}
+
+.defaultLabel {
+  @include defaultLabel(16px, $cd_dark);
+
+  &--withHelp {
+    &:hover {
+      cursor: help;
+    }
+  }
+}
+
+.defaultInput {
+  @include defaultInput(100%, 25px, 20px);
+}
+
+.sectionForm {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: 10px;
+
+  &__questionName {
+    display: grid;
+    grid-template-columns: 3fr 9fr;
+  }
+
+  &__questionTimeOut {
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr 7fr;
+  }
+
+  &__questionType {
+    display: grid;
+    grid-template-columns: 3fr 9fr;
+    grid-template-areas: 
+      "label typeOoM"
+      "label typeMoM"
+      "label typeSO"
+      "label typeFM";
+    
+
+    &--label {
+      grid-area: label;
+    }
+
+    &--typeOoM {
+      grid-area: typeOoM;
+    }
+
+    &--typeMoM {
+      grid-area: typeMoM;
+    }
+
+    &--typeSO {
+      grid-area: typeSO;
+    }
+
+    &--typeFM {
+      grid-area: typeFM;
+    }
+  }
+}
+
+.checkBox {
+  position: relative;
+  width: 2.22vw;
+  height: 2.22vw;
+  margin: 0.37vw 0;
+  background-color: #ffffffb0;
+  border: 1px inset #242424;
+  border-radius: $defaultRadius;
+  box-shadow: 0 0 0.37vw 2px #ffffffb0;
+
+  & > svg {
+    width: 3.7vw;
+    height: 3.7vw;
+
+    position: absolute;
+    bottom: 0;
+    left: -0.74vw;
+
+    fill: $cd_green_m;
+    animation: select 300ms linear forwards;
+
+    @keyframes select {
+      0% {
+        opacity: 0;
+      }
+    
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.colorSchema {
+  &--light {
+    background-color: #ffffffcc;
+    color: $cd_dark;
+  }
+
+  &--dark {
+    background-color: #000000cc;
+    color: $cd_grey_el;
+  }
+}
+
+.withStyles {
+  & strong,
+  & b {
+    font-weight: 600;
+  }
+
+  & i { font-style: italic; }
+
+  & a {
+    color: blue;
+    text-decoration: underline;
+  }
+
+  & h2 {
+    font-size: 3vw;
+  }
+  & h3 {
+    font-size: 2.5vw;
+  }
+  & h4 {
+    font-size: 2vw;
+  }
+
+  & ul {
+    margin: 0.37vw;
+    padding: 0 0 0 1.48vw;
+    list-style-type: disc;
+    list-style-position: outside;
+  }
+
+  & ol {
+    margin: 0.37vw;
+    padding: 0 0 0 2.5vw;
+    list-style-type: decimal;
+    list-style-position: outside;
+  }
+
+}
+
+@media screen and (max-width: 450px) {
+  .glass {
+    box-shadow: 0 0 3px 0 #000000;
+  }
+
+  .controlBtn {
+    @include defaultBtn(23vw, 6vw, 4vw); // defaultBtn($width, $height, $fontSize)
+    @include blink();
+  }
+
+  .defaultLabel {
+    @include defaultLabel(4vw, $cd_dark);
+  }
+
+  .checkBox {
+    width: 7vw;
+    height: 7vw;
+    margin: 1.11vw 0;
+    box-shadow: 0 0 1.11vw 2px #ffffffb0;
+  
+    & > svg {
+      width: 11vw;
+      height: 11vw;
+      left: -2.22vw;
+    }
+  }
+}
+
+@media screen and (min-width: 451px) and (max-width: 750px) {
+  .glass {
+    box-shadow: 0 0 3px 0 #000000;
+  }
+
+  .controlBtn {
+    @include defaultBtn(17vw, 5vw, 3vw); // defaultBtn($width, $height, $fontSize)
+    @include blink();
+  }
+
+  .defaultLabel {
+    @include defaultLabel(3vw, $cd_dark);
+  }
+
+  .checkBox {
+    width: 5vw;
+    height: 5vw;
+    margin: 1.11vw 0;
+    box-shadow: 0 0 1.11vw 2px #ffffffb0;
+  
+    & > svg {
+      width: 7vw;
+      height: 7vw;
+      left: -1vw;
+    }
+  }
+}
+

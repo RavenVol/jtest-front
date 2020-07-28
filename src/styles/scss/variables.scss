@@ -1,0 +1,40 @@
+// Default colors
+$cd_dark: #252525;
+
+$cd_grey_d: #6b6b6b;
+$cd_grey_m: #8c8c8c;
+$cd_grey_l: #adadad;
+$cd_grey_el: #eeeeee;
+
+$cd_red_el: #ff4949;
+$cd_red_l: #ff3434;
+$cd_red_m: #e01b1b;
+$cd_red_d: #a10000;
+
+$cd_brown_el: #ffded0;
+
+$cd_blue_el: #acacff;
+$cd_blue_l: #6f6fff;
+$cd_blue_m: #2c2cd4;
+$cd_blue_d: #0b0ba7;
+
+$cd_green_el: #90c790;
+$cd_green_l: #4ebb4e;
+
+$cd_greenBottle: #1d6b1d80;
+
+$cd_green_m: #b3f334;
+
+$defaultRadius: 5px;
+
+$createTestErrorFontSize: 14px;
+
+@media screen and (max-width: 450px) {
+  $createTestErrorFontSize: 3vw;
+  $defaultRadius: 3px;
+}
+
+@media screen and (min-width: 451px) and (max-width: 750px) {
+  $createTestErrorFontSize: 2vw;
+  $defaultRadius: 3px;
+}

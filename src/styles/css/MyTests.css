@@ -1,0 +1,86 @@
+.myTests {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+.myTests__header {
+  width: 100%;
+  position: relative;
+  top: -1px;
+  left: 0;
+}
+.myTests__main {
+  width: 98%;
+  min-height: 10vw;
+  margin: 1vw auto 8.5vw auto;
+}
+.myTests__footer {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.myTestsMain {
+  padding: 1vw;
+  border-radius: 5px;
+}
+.myTestsMain__title {
+  display: inline-block;
+}
+.myTestsMain__tests {
+  width: 100%;
+  margin: 1vw 0;
+}
+.myTestsMain__thead {
+  display: grid;
+  grid-template-columns: 2fr 6.7fr 1.8fr 1.5fr;
+  grid-column-gap: 5px;
+}
+.myTestsMain__thead > p {
+  width: 100%;
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: bold;
+  text-align: center;
+  word-wrap: break-word;
+  cursor: pointer;
+  background-color: #8c8c8c;
+  color: #252525;
+}
+.myTestsMain__trow {
+  width: 100%;
+  margin-top: 5px;
+  display: grid;
+  grid-template-columns: 2fr 6.7fr 1.8fr 1.5fr;
+  grid-column-gap: 5px;
+}
+.myTestsMain__trow > p {
+  width: 100%;
+  padding: 0 3px;
+  font-size: 18px;
+  line-height: 20px;
+  text-align: left;
+  color: #252525;
+}
+.myTestsMain__trow--id {
+  font-family: monospace;
+}
+.myTestsMain__trow--type, .myTestsMain__trow--status {
+  text-align: center !important;
+}
+.myTestsMain__trow:nth-child(odd) > p {
+  background-color: #d1d1d1;
+}
+.myTestsMain__trow:nth-child(even) > p {
+  background-color: #e7e7e7;
+}
+.myTestsMain__trow:hover {
+  cursor: pointer;
+}
+.myTestsMain__trow:hover > p {
+  background-color: #acacff;
+}
+
+/*# sourceMappingURL=MyTests.css.map */

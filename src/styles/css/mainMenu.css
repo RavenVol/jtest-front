@@ -1,0 +1,127 @@
+.mainMenu {
+  width: 100%;
+  min-height: 300px;
+  margin: 5px 0;
+  display: grid;
+  grid-template-areas: "inscription langbar" "inscription menu" "inscription search";
+  grid-template-columns: 20% 80%;
+  grid-template-rows: 1fr 3fr 1fr;
+  justify-content: start;
+  align-items: center;
+}
+.mainMenu__inscription {
+  grid-area: inscription;
+  min-height: 250px;
+}
+.mainMenu__langbar {
+  grid-area: langbar;
+}
+.mainMenu__buttonsList {
+  grid-area: menu;
+  justify-self: end;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.mainMenu__buttonsList > li {
+  width: 100%;
+}
+.mainMenu__button {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start !important;
+  align-items: center;
+}
+.mainMenu__button > svg {
+  width: 20px;
+  height: 20px;
+  margin-right: 20px;
+  fill: #adadad;
+  transition: 300ms linear;
+}
+.mainMenu__button:hover > svg {
+  transition: 1ms linear;
+  fill: white;
+  transform: scale(1.2);
+}
+.mainMenu__button:active > p {
+  transform: translateY(1px);
+}
+.mainMenu__button:active > svg {
+  transition: 1ms linear;
+  fill: white;
+  transform: translateY(1px) scale(1.2);
+}
+.mainMenu:hover .mainMenu__inscription {
+  text-shadow: 0px 0px 2px #eeeeee;
+}
+
+.langbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.langbar__selector {
+  width: 25px;
+  height: 35px;
+}
+.langbar__selector svg {
+  width: 100%;
+  height: 100%;
+  fill: #adadad;
+  transition: 200ms linear;
+}
+.langbar__selector--mirrored {
+  transform: rotateZ(180deg);
+}
+.langbar__selector:hover svg {
+  fill: white;
+}
+.langbar__list {
+  width: 108px;
+  height: 36px;
+  margin: 0 5px;
+  border: none !important;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.langbar__listItem {
+  min-width: 30px;
+  height: 30px;
+  margin-left: 3px;
+  position: absolute;
+  top: 3px;
+  cursor: pointer;
+  border: 1px solid silver;
+  border-radius: 50%;
+  overflow: hidden;
+  transition: 200ms linear;
+  font-size: 20px;
+  font-weight: bold;
+  z-index: 1;
+}
+.langbar__listItem p {
+  position: absolute;
+  bottom: 0;
+  right: 3px;
+  z-index: 5;
+  color: black;
+}
+.langbar__listItem--active {
+  box-shadow: 0 0 5px 3px #fffb00;
+  z-index: 0;
+}
+
+@media screen and (min-width: 450px) and (max-width: 750px) {
+  .mainMenu {
+    min-height: 200px;
+  }
+}
+
+/*# sourceMappingURL=mainMenu.css.map */

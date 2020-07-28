@@ -1,0 +1,107 @@
+.statBar__row {
+  margin-top: 0.74vw;
+  display: grid;
+  grid-template-columns: 1fr 8fr 1.25fr;
+  grid-gap: 0.74vw;
+  justify-content: start;
+  justify-items: start;
+  align-items: center;
+}
+.statBar__column {
+  width: 100%;
+}
+.statBar__column--prepost {
+  height: 22.2vw;
+  display: grid;
+  grid-template-rows: 1fr 8fr 1fr;
+  grid-row-gap: 0.74vw;
+  align-items: end;
+}
+.statBar__column--pre {
+  height: 20.35vw;
+  display: grid;
+  grid-template-rows: 1fr 9fr;
+  grid-row-gap: 0.74vw;
+  align-items: end;
+}
+.statBar__column--post {
+  height: 20.35vw;
+  display: grid;
+  grid-template-rows: 9fr 1fr;
+  grid-row-gap: 0.74vw;
+  align-items: end;
+}
+.statBar__column--none {
+  height: 18.5vw;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.statBar__pre, .statBar__post {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.33vw;
+  color: #adadad;
+  text-align: center;
+}
+
+@media screen and (max-width: 450px) {
+  .statBar__row {
+    margin-top: 1vw;
+    grid-template-columns: 2fr 8fr 2fr;
+    grid-gap: 1vw;
+  }
+  .statBar__column--prepost {
+    height: 50vw;
+    grid-template-rows: 1fr 8fr 1fr;
+    grid-row-gap: 1vw;
+  }
+  .statBar__column--pre {
+    height: 45vw;
+    grid-template-rows: 1fr 9fr;
+    grid-row-gap: 1vw;
+  }
+  .statBar__column--post {
+    height: 45vw;
+    grid-template-rows: 9fr 1fr;
+    grid-row-gap: 1vw;
+  }
+  .statBar__column--none {
+    height: 40vw;
+  }
+  .statBar__pre, .statBar__post {
+    font-size: 3vw;
+  }
+}
+@media screen and (min-width: 451px) and (max-width: 750px) {
+  .statBar__row {
+    margin-top: 0.5vw;
+    grid-template-columns: 2fr 8.5fr 1.5fr;
+    grid-column-gap: 0.5vw;
+  }
+  .statBar__column--prepost {
+    height: 30vw;
+    grid-template-rows: 1fr 8fr 1fr;
+    grid-row-gap: 1vw;
+  }
+  .statBar__column--pre {
+    height: 27.5vw;
+    grid-template-rows: 1fr 9fr;
+    grid-row-gap: 1vw;
+  }
+  .statBar__column--post {
+    height: 27.5vw;
+    grid-template-rows: 9fr 1fr;
+    grid-row-gap: 1vw;
+  }
+  .statBar__column--none {
+    height: 25vw;
+  }
+  .statBar__pre, .statBar__post {
+    font-size: 2.2vw;
+  }
+}
+
+/*# sourceMappingURL=StatisticsBar.css.map */

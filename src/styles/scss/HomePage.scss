@@ -1,0 +1,772 @@
+@import './variables.scss';
+@import './mixins.scss';
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Nothing+You+Could+Do&display=swap');
+
+.homePage {
+  width: 100%;
+  
+  &__header {
+    width: 100%;
+    height: 19.7vw;
+    z-index: 20;
+  }
+
+  &__main {
+    width: 100%;
+    margin-bottom: 0.7vw;
+  }
+
+  &__footer {
+    width: 100%;
+  }
+}
+
+.homeHeader {
+  position: relative;
+
+  &__welcome {
+    position: absolute;
+    top: 60%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 5.5vw;
+    line-height: 6vw;
+    font-style: italic;
+    text-align: center;
+  }
+
+  &__jtestInscription {
+    font-family: "Nothing You Could Do";
+    font-size: 4.5vw;
+    &::first-letter {
+      color: greenyellow;
+    }
+  }
+
+  &__logo {
+    width: 14.4vw;
+    height: 18.83vw;
+    position: absolute;
+    top: 20%;
+    right: 7.4vw;
+    transform: rotateZ(20deg);
+    box-shadow: 0.4vw 0.6vw 1.5vw -0.0vw #000000;
+
+    & >svg {
+      width: 18.83vw;
+      position: absolute;
+      top: 0.3vw;
+      left: -0.75vw;
+      fill: #ffffffdd;
+    }
+  }
+
+  &__slogan {
+    padding: 0.75vw 1.5vw;
+    position: absolute;
+    left: 50%;
+    top: 70%;
+    transform: translate(-50%, -50%) rotateZ(-10deg);
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 2.2vw;
+
+    border: 0.15vw solid $cd_dark;
+    border-radius: 0.4vw;
+    box-shadow: inset 0 0 0 0.07vw $cd_grey_el, 0 0 0 0.07vw $cd_grey_el;
+  }
+}
+
+.homeMain {
+  margin-top: -1px;
+
+  &__waveWrap {
+    position: sticky;
+    top: -3vw;
+    z-index: 10;
+  }
+
+  &__search {
+    width: 40vw;
+    margin: 1vw auto 0 auto;
+  }
+
+  &__section {
+    position: relative;
+    width: 100%;
+    &--1, &--2, &--3 {
+      height: 29.6vw;
+    }
+  }
+
+  &__wrapTrapez {
+    &--1, &--2, &--3 {
+      position: absolute;
+      height: 29.6vw;
+    }
+
+    &--for2left {
+      width: 54.5%;
+      top: 0;
+      left: 0.5%;
+
+      &:hover {
+        & .firework {
+          &__star {
+            fill: #ffff80;
+          }
+          &__line {
+            fill: #8080ff;
+          }
+        }
+      }
+    }
+    &--for2right {
+      width: 54.5%;
+      top: 0;
+      right: 0.5%;
+
+      &:hover { 
+        & .pencil {
+          &__mark, &__lead {
+            fill: yellowgreen;
+          }
+  
+          &__lead {
+            fill: $cd_dark;
+          }
+  
+          &__rim {
+            fill: #d89d31;
+          }
+  
+          &__edge {
+            fill: #c2bc68;
+          }
+        }
+      }
+    }
+
+    &--for3left {
+      width: 37%;
+      top: 0;
+      left: 0.5%;
+    }
+    &--for3center {
+      width: 37%;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%) !important;
+    }
+    &--for3right {
+      width: 37%;
+      top: 0;
+      right: 0.5%;
+    }
+
+    &--for5upleft {
+      width: 41vw;
+      height: 49%;
+      top: 0;
+      left: 0.5%;
+    }
+    &--for5downleft {
+      width: 41vw;
+      height: 49%;
+      bottom: 0;
+      left: 0.5%;
+    }
+    &--for5upright {
+      width: 41vw;
+      height: 49%;
+      top: 0;
+      right: 0.5%;
+    }
+    &--for5downright {
+      width: 41vw;
+      height: 49%;
+      bottom: 0;
+      right: 0.5%;
+    }
+    &--for5center {
+      width: 15vw;
+      height: 100%;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__trapezLeft {
+    width: 100%;
+    height: 100%;
+
+    &--top {
+      clip-path: polygon(0% 0%, 100% 0%, 80% 100%, 0% 100%);
+    }
+
+    &--parallelogramm {
+      clip-path: polygon(0% 0%, 66.67% 0%, 100% 100%, 33.33% 100%);
+    }
+  }
+    
+  &__trapezRight {
+    width: 100%;
+    height: 100%;
+
+    &--bottom {
+      clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
+
+    &--parallelogramm {
+      clip-path: polygon(33.33% 0%, 100% 0%, 66.67% 100%, 0% 100%);
+    }
+  }
+
+  &__trapezCenter {
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(20% 0%, 100% 0%, 80% 100%, 0% 100%);
+  }
+
+  &__diamond {
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  }
+
+  &__title {
+    position: absolute;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 3.6vw;
+
+    z-index: 1;
+    transition: 500ms linear;
+
+    &--1 {
+      top: 0.75vw;
+      left: 51%;
+      transform: translateX(-50%);
+    }
+    &--2 {
+      top: 0.75vw;
+      right: 45%;
+      transform: translateX(50%);
+    }
+    &--3 {
+      top: 0.75vw;
+      right: 34%;
+    }
+    &--4 {
+      top: 0.75vw;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &--5 {
+      bottom: 0.75vw;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &--top {
+      top: 0.75vw;
+    }
+
+    &--center {
+      width: 80%;
+      text-align: center;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &--bottom {
+      bottom: 0.75vw;
+    }
+
+    &--left {
+      left: -80%;
+      padding: 0 0.5vw 0 3.5vw;
+    }
+
+    &--right {
+      right: -80%;
+      padding: 0 3.5vw 0 0.5vw;
+    }
+
+    &--animate {
+      &:hover {
+        & .homeMain__title--left {
+          left: 0%;
+        }
+        & .homeMain__title--right {
+          right: 0%;
+        }
+      }
+    }
+  }
+
+  &__titleadd {
+    position: absolute;
+
+    font-size: 1.5vw;
+    line-height: 2.2vw;
+    font-weight: 300;
+
+    &--1 {
+      width: 50%;
+      top: 5.2vw;
+      left: 45%;
+    }
+    &--2 {
+      width: 48%;
+      top: 5.2vw;
+      left: 45%;
+    }
+    &--3 {
+      width: 45%;
+      top: 5.2vw;
+      right: 35%;
+    }
+  }
+
+  &__text {
+    width: 90%;
+    position: absolute;
+    left: 50%;
+    font-size: 1.5vw;
+    line-height: 2.9vw;
+    font-weight: 200;
+    font-style: italic;
+
+    text-align: right;
+    & >p {
+      &:nth-child(2) {
+        margin-right: 1.1vw;
+      }
+      &:nth-child(3) {
+        margin-right: 2.2vw;
+      }
+      &:nth-child(4) {
+        margin-right: 3.3vw;
+      }
+      &:nth-child(5) {
+        margin-right: 4.4vw;
+      }
+    }
+
+    &--1 {
+      top: 50%;
+      transform: translateX(-65%);
+    }
+    &--2 {
+      bottom: 40%;
+      transform: translateX(-55%);
+      font-weight: 200;
+    }
+    &--3 {
+      top: 50%;
+      transform: translateX(-50%);
+    }
+    &--4 {
+      bottom: 0.75vw;
+      transform: translateX(-65%);
+      font-weight: 200;
+    }
+    &--5 {
+      top: 0.75vw;
+      transform: translateX(-75%);
+      font-weight: 200;
+    }
+  }
+
+  &__illustration {
+    position: absolute;
+    
+    &--1 {
+      width: 54%;
+      top: -5%;
+      left: 0.5vw;
+    }
+    &--2 {
+      width: 55%;
+      bottom: 0%;
+      left: 0%;
+    }
+    &--3 {
+      width: 54%;
+      top: -5%;
+      right: 0.5vw;
+    }
+    &--4 {
+      width: 14vw;
+      height: 14vw;
+      bottom: 0.75vw;
+      left: 2vw;
+    }
+    &--5 {
+      width: 14vw;
+      height: 14vw;
+      top: 0.75vw;
+      right: 2vw;
+    }
+    &--6 {
+      width: 28vw;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+    }
+  }
+
+  &__link {
+    position: absolute;
+    text-decoration: none;
+    &--1 {
+      top: 30%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &--2 {
+      bottom: 30%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__button {
+    @include blink;
+    @include defaultBtn(35vw, 4vw, 3vw);
+  }
+
+  &__losung {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 4vw;
+    font-weight: 600;
+    font-style: oblique;
+    line-height: 12vw;
+    color: white;
+
+    &--jtestInscription {
+      margin-left: 2vw;
+      font-family: "Nothing You Could Do";
+      font-weight: 500;
+      &::first-letter {
+        color: greenyellow;
+      }
+    }
+  }
+}
+
+.firework {
+  &__star, &__line {
+    fill: $cd_grey_m;
+    transition: 300ms linear;
+  }
+}
+
+.pencil {
+  &__mark, &__lead, &__rim, &__edge {
+    fill: $cd_grey_m;
+    transition: 300ms linear;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .homePage {
+    &__header { height: 30vw; }
+    &__footer {
+      margin-top: 6vw;
+    }
+  }
+
+  .homeHeader {
+    &__welcome {
+      top: 70%;
+      left: 15%;
+      line-height: 7vw;
+    }
+  
+    &__jtestInscription {
+      font-size: 7vw;
+    }
+  
+    &__logo {
+      top: 45%;
+      right: 10vw;
+      transform: scale(1.2) rotateZ(20deg);;
+    }
+  
+    &__slogan {
+      top: 70%;
+      font-size: 3.5vw;
+      transform: translate(-50%, -50%) rotateZ(-13deg);
+    }
+  }
+
+  .homeMain {
+    &__search { 
+      width: 90vw; 
+      margin: 3vw auto 0 auto;
+    }
+  }
+}
+
+@media screen and (min-width: 451px) and (max-width: 750px) {
+  .homePage {
+    &__header { height: 20vw; }
+    &__footer {
+      margin-top: 2vw;
+    }
+  }
+
+  .homeHeader {
+    &__welcome {
+      top: 65%;
+      left: 20%;
+      line-height: 6vw;
+    }
+  
+    &__jtestInscription {
+      font-size: 6vw;
+    }
+  
+    &__logo {
+      top: 25%;
+      right: 9vw;
+    }
+  
+    &__slogan {
+      top: 70%;
+      font-size: 3vw;
+      transform: translate(-50%, -50%) rotateZ(-15deg);
+    }
+  }  
+
+  .homeMain {
+    &__search { 
+      width: 80vw; 
+      margin: 3vw auto 0 auto;
+    }
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .homeMain {  
+    &__section {
+      overflow: hidden;
+      &--1 {
+        height: 110vw;
+      }
+      &--2 {
+        height: 50vw;
+      }
+      &--3 {
+        height: 72vw;
+      }
+    }
+  
+    &__wrapTrapez {
+      &--1 {
+        height: 110vw;
+      }
+      &--3 {
+        height: 72vw;
+      }
+
+      &--for2left { 
+        width: 99%; 
+        height: 35vw;
+        top: 0;
+      }
+      &--for2right { 
+        width: 99%; 
+        height: 35vw;
+        top: 37vw;
+      }
+  
+      &--for3left {
+        width: 99%;
+        height: 35vw;
+        top: 0;
+      }
+      &--for3center {
+        width: 99%;
+        height: 35vw;
+        top: 37vw;
+      }
+      &--for3right {
+        width: 99%;
+        height: 35vw;
+        top: 74vw;
+      }
+    }
+  
+    &__trapezLeft {
+      &--top {clip-path: none;}
+      &--parallelogramm {
+        clip-path: polygon(0% 0%, 80% 0%, 100% 100%, 20% 100%);
+      }
+    }
+
+    &__trapezCenter { clip-path: none; }
+
+    &__trapezRight {
+      &--bottom { clip-path: none; }
+      &--parallelogramm {
+        clip-path: polygon(20% 0%, 100% 0%, 80% 100%, 0% 100%);
+      }
+    }
+  
+    &__title {
+      font-size: 6vw;
+      transition: 300ms linear;
+
+      &--1, &--3 {
+        left: 40%;
+        transform: none;
+      }
+
+      &--2 {
+        right: 52%;
+        transform: none;
+      }
+      &--4 {
+        font-size: 7vw;
+        transform: translateX(-20%);
+      }
+      &--5 {
+        font-size: 7vw;
+        transform: translateX(-90%);
+        bottom: 2vw;
+      }
+    }
+  
+    &__titleadd {  
+      font-size: 4vw;
+      line-height: 4vw;
+      font-weight: 200;
+  
+      &--1 { top: 7vw; }
+      &--2 {
+        width: 50%;
+        top: 7vw;
+        left: 1%;
+      }
+      &--3 { 
+        top: 7vw; 
+        width: 50%;
+        right: 0;
+        left: 45%;
+      }
+    }
+  
+    &__text {
+      font-size: 3vw;
+      line-height: 3.2vw;
+      font-weight: 300;
+  
+      &--1, &--3 {
+        top: 55%;
+        transform: translateX(-50%);
+      }
+      &--2 {
+        width: 55%;
+        bottom: 15%;
+        transform: translateX(-91%);
+        font-weight: 300;
+      }
+      &--4 {
+        font-size: 3.5vw;
+        line-height: 3.5vw;
+        bottom: 2vw;
+        transform: translateX(-47%);
+        font-weight: 300;
+      }
+      &--5 {
+        font-size: 3.5vw;
+        line-height: 3.5vw;
+        top: 2vw;
+        transform: translateX(-80%);
+        font-weight: 300;
+      }
+    }
+
+    &__illustration {
+      &--2 {
+        width: 52%;
+        left: 52%;
+      }
+      &--3 {
+        width: 54%;
+        top: -5%;
+        right: 45vw;
+        transform: rotateY(180deg);
+      }
+      &--4 {
+        width: 31vw;
+        bottom: 18vw;
+      }
+      &--5 {
+        width: 31vw;
+        right: 5vw;
+      }
+      &--6 {
+        width: 48vw;
+      }
+    }
+  
+    &__losung { 
+      font-size: 5vw; 
+      line-height: 16vw;
+    }
+
+    &__link {
+      &--1 {
+        left: 63%;
+        transform: translateX(-50%);
+      }
+  
+      &--2 {
+        left: 32%;
+        transform: translateX(-50%);
+      }
+    }
+  
+    &__button {
+      @include defaultBtn(50vw, 7vw, 5vw);
+    }
+  }
+
+  .firework {
+    &__star {
+      fill: #ffff80;
+    }
+    &__line {
+      fill: #8080ff;
+    }
+  }
+
+  .pencil {
+    &__mark, &__lead {
+      fill: yellowgreen;
+    }
+
+    &__lead {
+      fill: $cd_dark;
+    }
+
+    &__rim {
+      fill: #d89d31;
+    }
+
+    &__edge {
+      fill: #c2bc68;
+    }
+  }
+}

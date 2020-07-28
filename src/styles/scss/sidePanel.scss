@@ -1,0 +1,43 @@
+@import './variables.scss';
+
+.sidePanel {
+  width: 230px;
+
+  border-radius: $defaultRadius;
+  
+  position: fixed;
+  top: 60px;
+  transition: 200ms ease-in-out;
+
+  z-index: 99;
+
+  &--left {
+    left: 10px;
+    animation: leftPanelAppear 200ms ease-in-out;
+  }
+
+  &--right {
+    right: 10px;
+    animation: rightPanelAppear 200ms ease-in-out;
+  }
+}
+
+@keyframes leftPanelAppear {
+  0% {
+    left: -270px;
+  }
+
+  100% {
+    left: 10px;
+  }
+}
+
+@keyframes rightPanelAppear {
+  0% {
+    right: -270px;
+  }
+
+  100% {
+    right: 10px;
+  }
+}

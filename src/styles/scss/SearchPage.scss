@@ -1,0 +1,319 @@
+@import './variables.scss';
+
+.searchPage {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+
+  &__header {
+    width: 100%;
+    position: absolute;
+    top: -1px;
+    left: 0;
+  }
+
+  &__main {
+    width: 100%;
+    margin-top: 8vw;
+    margin-bottom: 8.5vw;
+  }
+
+  &__footer {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+}
+
+.searchPageMain {
+  &__search {
+    width: 40vw;
+    margin: 0 auto;
+  }
+
+  &__section {
+    width: 98%;
+    margin: 3vw auto;
+    padding: 1vw;
+    border-radius: $defaultRadius;
+  }
+  &__title {
+    display: inline-block;
+  }
+  &__nothing {
+    width: 100%;
+    height: 10vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 2vw;
+  }
+  &__results {
+    width: 100%;
+    min-height: 10vw;
+  }
+}
+
+.searchTable {
+  width: 100%;
+  margin-top: 3vw;
+
+  &__top {
+    width: 100%;
+    background-color: $cd_grey_m;
+    color: $cd_dark;
+    font-size: 1.48vw;
+    line-height: 2.22vw;
+    font-weight: 600;
+    text-align: center;
+
+    border: 1px solid $cd_dark;
+    border-radius: $defaultRadius $defaultRadius 0 0;
+
+    cursor: pointer;
+    transition: 100ms linear;
+    
+
+    &:hover {
+      color: yellow;
+    }
+  }
+
+  &__main {
+    width: 100%;
+    padding: 0.74vw 0.37vw;
+  }
+}
+
+.searchTableMain {
+  border: 1px solid $cd_dark;
+  border-radius: 0 0 $defaultRadius $defaultRadius;
+
+  &__header {
+    min-height: 1.85vw;
+    display: grid;
+    grid-column-gap: 0.37vw;
+    align-items: center;
+    
+    &--test, &--author {
+      grid-template-columns: 2fr 6fr 2fr 2fr;
+    }
+
+    &--result {
+      grid-template-columns: 2fr 6fr 2fr 1fr 1fr;
+    }
+
+    & > p {
+      width: 100%;
+      height: 100%;
+      font-size: 1.48vw;
+      font-weight: bold;
+      word-wrap: break-word;
+
+      cursor: pointer;
+
+      background-color: $cd_grey_m;
+      color: $cd_dark;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &__row {
+    margin-top: 0.37vw;
+    min-height: 1.85vw;
+    display: grid;
+    grid-gap: 0.37vw;
+    text-decoration: none;
+
+    transition: 300ms linear;
+
+    &--test, &--author {
+      grid-template-columns: 2fr 6fr 2fr 2fr;
+    }
+
+    &--result {
+      grid-template-columns: 2fr 6fr 2fr 1fr 1fr;
+    }
+
+    & > p {
+      width: 100%;
+      height: 100%;
+      padding: 0 2px;
+      font-size: 1.33vw;
+      color: $cd_dark;
+      transition: 300ms linear;
+      word-wrap: break-word;
+
+      display: flex;
+      align-items: center;
+    }
+
+    &--id {
+      font-family: monospace;
+    }
+    &--type, &--date, &--result {
+      justify-content: center !important;
+    }
+
+    &:nth-child(odd) {
+      & > p {
+        background-color: #d1d1d1;
+      }
+    }
+    &:nth-child(even) {
+      & > p {
+        background-color: #e7e7e7;
+      }
+    }
+
+    &:hover {
+      cursor: pointer;
+      & > p {
+        background-color: $cd_blue_el;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .searchPage {
+    min-height: 90vh;
+
+    &__main { margin: 65px auto 14vw auto; }
+  }
+  
+  .searchPageMain {
+    &__search { width: 90vw; }
+
+    &__nothing {
+      height: 40vw;  
+      font-size: 4vw;
+    }
+    &__results { min-height: 40vw; }
+  }
+  
+  .searchTable {
+    &__top {
+      font-size: 4vw;
+      line-height: 6vw;
+    }
+  
+    &__main { padding: 1vw 0.37vw; }
+  }
+  
+  .searchTableMain {
+    &__header {
+      min-height: 5.7vw;
+      &--test { grid-template-columns: 63% 18% 18%; }
+      
+      &--author { grid-template-columns: 21% 42% 18% 18%; }
+  
+      &--result { grid-template-columns: 21% 34% 18% 16% 9.5%; }
+  
+      & > p { 
+        font-size: 3.6vw;
+      }
+      & > .searchTableMain__author--id,
+      & > .searchTableMain__resault--id,
+      & > .searchTableMain__resault--res {
+        font-size: 2.5vw;
+      }
+    }
+  
+    &__row {
+      min-height: 40px;
+      &--test { grid-template-columns: 63% 18% 18%; }
+      
+      &--author { grid-template-columns: 21% 42% 18% 18%; }
+  
+      &--result { grid-template-columns: 21% 34% 18% 16% 9.5%; }
+  
+      & > p { font-size: 3vw; }
+
+      & > .searchTableMain__author--id,
+      & > .searchTableMain__resault--id {
+        font-size: 2vw;
+      }
+    }
+
+    &__test {
+      &--id {display: none !important; }
+    }
+  }
+}
+
+@media screen and (min-width: 451px) and (max-width: 750px) {
+  .searchPage {
+    min-height: 80vh;
+
+    &__main { margin: 65px auto 12vw auto; }
+  }
+  
+  .searchPageMain {
+    &__search { width: 90vw; }
+
+    &__nothing {
+      height: 40vw;  
+      font-size: 4vw;
+    }
+    &__results { min-height: 40vw; }
+  }
+  
+  .searchTable {
+    &__top {
+      font-size: 3vw;
+      line-height: 4.5vw;
+    }
+  
+    &__main { padding: 0.7vw 0.37vw; }
+  }
+  
+  .searchTableMain {
+    &__header {
+      min-height: 5vw;
+      &--test { grid-template-columns: 19% 50% 12% 18%; }
+      
+      &--author { grid-template-columns: 19% 50% 12% 18%; }
+  
+      &--result { grid-template-columns: 19% 40% 18% 13% 9%; }
+  
+      & > p { font-size: 3vw; }
+
+      & > .searchTableMain__test--id, 
+      & > .searchTableMain__author--id,
+      & > .searchTableMain__resault--id {
+        font-size: 2.4vw;
+      }
+      & > .searchTableMain__resault--res {
+        font-size: 1.8vw;
+      }
+    }
+  
+    &__row {
+      min-height: 40px;
+      &--test { grid-template-columns: 19% 50% 12% 18%; }
+      
+      &--author { grid-template-columns: 19% 50% 12% 18%; }
+  
+      &--result { grid-template-columns: 19% 40% 18% 13% 9%; }
+  
+      & > p { font-size: 2.5vw; }
+
+      & > .searchTableMain__test--id,
+      & > .searchTableMain__author--id,
+      & > .searchTableMain__resault--id {
+        font-size: 1.8vw;
+      }
+
+      & > .searchTableMain__resault--date {
+        font-size: 2.22vw;
+      }
+    }
+  }
+}

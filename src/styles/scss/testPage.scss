@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;1,300&display=swap');
+
+@import './variables.scss';
+@import './mixins.scss';
+
+
+.testsPage {
+  width: 100%;
+
+  &__header {
+    width: 100%;
+    margin-top: -1px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+  }
+
+  &__main {
+    width: 100%;
+    margin-top: 8.5vw;
+  }
+
+  &__footer {
+    width: 100%;
+  }
+}
+
+.testsPageMain {
+  &__section {
+    width: 100%;
+    margin: 3vw 0 7vw 0;
+  }
+
+  &__search {
+    width: 40vw;
+    margin: 0 auto 0 auto;
+  }
+
+  &__title {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 5vw;
+    font-style: italic;
+    text-align: center;
+    color: white;
+  }
+
+  &__listWrap {
+    width: 100%;
+    position: relative;
+    
+    &--trapezLeft {
+      clip-path: polygon(0% 0%, 95% 0%, 100% 100%, 5% 100%);
+    }
+
+    &--trapezRight {
+      clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
+    }
+  }
+
+  &__list {
+    width: 90%; 
+    margin: 0 auto;   
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-items: center;
+  }
+
+  &__button {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    font-size: 1.5vw;
+    color: #3f57d2;
+    background: none;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    transition: 200ms linear;
+    z-index: 5;
+
+    &:hover {
+      color: orangered;
+    }
+
+    &--less {
+      top: 0;
+    }
+    &--more {
+      bottom: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .testsPage {
+    overflow: hidden;
+    &__main {
+      margin-top: 65px;
+    }
+  }
+  
+  .testsPageMain {
+    &__search { width: 90vw; }
+  
+    &__title { font-size: 6vw; }
+  
+    &__listWrap {
+      margin: 2vw auto 0 auto;
+      padding: 4vw 0;
+      width: 98%;
+
+      &--trapezLeft { clip-path: none; }
+  
+      &--trapezRight { clip-path: none; }
+    }
+  
+    &__list {
+      width: 97%; 
+      grid-template-columns: 1fr 1fr;
+    }
+
+    &__button {
+      font-size: 5vw;
+    }
+  }
+}

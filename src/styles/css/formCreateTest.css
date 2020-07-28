@@ -1,0 +1,302 @@
+.noMargin {
+  margin: 0;
+}
+
+.cdgel {
+  color: #eeeeee;
+}
+
+.width40 {
+  width: 40px;
+}
+
+.formCreateTest {
+  box-sizing: border-box;
+  width: 100%;
+  display: grid;
+  grid-gap: 10px 15px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "name type" "name qtty" "name period" "lang lang" "rights rights" "usersList usersList" "infoBtn submitBtn";
+}
+.formCreateTest__name {
+  grid-area: name;
+  display: grid;
+  grid-template-columns: 3fr 7fr;
+}
+.formCreateTest__type {
+  grid-area: type;
+  display: grid;
+  grid-template-columns: 3fr 7fr;
+}
+.formCreateTest__type > div {
+  display: flex;
+  justify-content: space-between;
+}
+.formCreateTest__qtty {
+  grid-area: qtty;
+  display: grid;
+  grid-template-columns: 3fr 7fr;
+}
+.formCreateTest__qtty > input {
+  width: 50px;
+}
+.formCreateTest__lang {
+  grid-area: lang;
+  display: grid;
+  grid-template-columns: 3fr 7fr;
+  grid-template-columns: 14.5% 85.5%;
+}
+.formCreateTest__period {
+  grid-area: period;
+  display: grid;
+  grid-template-columns: 3fr 7fr;
+}
+.formCreateTest__period > div {
+  display: flex;
+  align-items: center;
+}
+.formCreateTest__period input {
+  width: 50px;
+  margin-right: 5px;
+}
+.formCreateTest__editRights {
+  grid-area: rights;
+  display: grid;
+  grid-template-columns: 3fr 7fr;
+  grid-template-columns: 14.5% 85.5%;
+}
+.formCreateTest__usersList {
+  grid-area: usersList;
+  display: grid;
+  grid-template-columns: 3fr 7fr;
+  grid-template-columns: 14.5% 85.5%;
+}
+.formCreateTest__langWrap {
+  display: grid;
+  grid-template-columns: 3fr 1fr 3fr;
+  grid-column-gap: 10px;
+  grid-template-areas: "selLang controlBtns availLang";
+  align-content: center;
+  align-items: center;
+}
+.formCreateTest__selLang {
+  grid-area: selLang;
+  box-sizing: border-box;
+  width: 100%;
+  height: 70px;
+  padding: 5px;
+  background-color: #eeeeee;
+  color: #252525;
+  border: 3px inset #8c8c8c;
+  border-radius: 5px;
+  overflow: auto;
+}
+.formCreateTest__controlBtns {
+  grid-area: controlBtns;
+  justify-self: center;
+}
+.formCreateTest__availLang {
+  grid-area: availLang;
+  box-sizing: border-box;
+  width: 100%;
+  height: 70px;
+  padding: 5px;
+  background-color: #eeeeee;
+  color: #252525;
+  border: 3px inset #8c8c8c;
+  border-radius: 5px;
+  overflow: auto;
+}
+.formCreateTest__editRightsWrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr 3fr 2fr;
+  grid-column-gap: 10px;
+}
+.formCreateTest__selectedUsers {
+  box-sizing: border-box;
+  width: 100%;
+  height: 50px;
+  padding: 5px;
+  background-color: #eeeeee;
+  color: #252525;
+  border: 3px inset #8c8c8c;
+  border-radius: 5px;
+  overflow: auto;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 14px;
+  color: #252525;
+}
+.formCreateTest__selectedUsers li {
+  display: flex;
+}
+.formCreateTest__selectedUsers button {
+  margin: 0 15px 0 5px;
+  padding: 0;
+  width: 14px;
+  height: 14px;
+  background-color: #ff4545;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 14px;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  transition: 300ms linear;
+}
+.formCreateTest__selectedUsers button:hover {
+  background-color: red;
+}
+
+.selection {
+  list-style-type: none;
+}
+.selection__item {
+  padding: 0 5px;
+  font-size: 12px;
+  line-height: 20px;
+  color: #252525;
+  transition: 300ms linear;
+}
+.selection__item:hover {
+  color: white;
+  background-color: #6f6fff;
+}
+.selection__item--selected {
+  color: white;
+  background-color: #3a3aff;
+}
+
+.langControlBtn {
+  box-sizing: border-box;
+  width: 80px;
+  height: 20px;
+  margin: 0;
+  padding: 1px 5px;
+  text-decoration: none;
+  font-size: 14px;
+  border: 1px solid #8c8c8c;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 300ms linear;
+}
+
+.addBtn {
+  box-sizing: border-box;
+  width: 30px;
+  height: 20px;
+  margin: 0;
+  padding: 1px 5px;
+  text-decoration: none;
+  font-size: 14px;
+  border: 1px solid #8c8c8c;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 300ms linear;
+}
+
+.delUserBtn {
+  box-sizing: border-box;
+  width: 14px;
+  height: 14px;
+  margin: 0;
+  padding: 1px 5px;
+  text-decoration: none;
+  font-size: 12px;
+  border: 1px solid #8c8c8c;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 300ms linear;
+  margin: 0 15px 0 5px;
+  font-weight: bold;
+  line-height: 14px;
+  border-radius: 50%;
+}
+
+.submitBtn {
+  box-sizing: border-box;
+  width: 100px;
+  height: 40px;
+  margin: 0;
+  padding: 1px 5px;
+  text-decoration: none;
+  font-size: 20px;
+  border: 1px solid #8c8c8c;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 300ms linear;
+  position: relative;
+  overflow: hidden;
+  grid-area: submitBtn;
+  justify-self: end;
+}
+.submitBtn:after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to top right, #ffffff00 30%, #ffffffdd 50%, #ffffff00 70%);
+  background-repeat: no-repeat;
+}
+.submitBtn:hover:after {
+  transition: 400ms linear;
+  top: -100%;
+}
+
+.infoBtn {
+  box-sizing: border-box;
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  padding: 1px 5px;
+  text-decoration: none;
+  font-size: 20px;
+  border: 1px solid #8c8c8c;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 300ms linear;
+  position: relative;
+  overflow: hidden;
+  padding: 2px;
+  grid-area: infoBtn;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+.infoBtn:after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to top right, #ffffff00 30%, #ffffffdd 50%, #ffffff00 70%);
+  background-repeat: no-repeat;
+}
+.infoBtn:hover:after {
+  transition: 400ms linear;
+  top: -100%;
+}
+.infoBtn svg {
+  width: 34px;
+  height: 34px;
+  fill: white;
+}
+
+/*# sourceMappingURL=formCreateTest.css.map */

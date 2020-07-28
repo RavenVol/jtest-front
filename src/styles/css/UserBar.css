@@ -1,0 +1,82 @@
+.userBar {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 5px 0;
+  box-sizing: border-box;
+}
+.userBar hr {
+  width: 90%;
+  margin: 0 auto;
+  border: 0;
+  height: 1px;
+  background: #adadad;
+}
+
+.user {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.user__image {
+  box-sizing: border-box;
+  width: 46px;
+  height: 46px;
+  padding: 1px;
+  margin: 2px 7px 7px 7px;
+  border: 2px solid #adadad;
+  border-radius: 50%;
+  box-shadow: 0 0 6px 0 #ff3434;
+}
+.user__image--auth {
+  box-shadow: 0 0 6px 0 green;
+}
+.user__image svg, .user__image img {
+  width: 40px;
+  height: 40px;
+  fill: #adadad;
+  border-radius: 50%;
+}
+.user__name {
+  margin: 0 5px;
+  font-size: 14px;
+  font-weight: normal;
+  color: #adadad;
+}
+
+.register {
+  margin-top: 5px;
+  font-size: 12px;
+  color: #adadad;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.signBar {
+  padding: 0 5px;
+  opacity: 1;
+}
+.signBar__message {
+  width: 100%;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: justify;
+  color: #eeeeee;
+}
+
+@media screen and (max-width: 1000px) {
+  .userBar {
+    max-height: 80vh;
+    overflow: scroll;
+  }
+}
+
+/*# sourceMappingURL=UserBar.css.map */

@@ -1,0 +1,98 @@
+.signin {
+  width: 100%;
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.signin__title {
+  font-size: 14px;
+  color: #adadad;
+}
+.signin__list {
+  list-style-type: none;
+}
+.signin__link {
+  width: 160px;
+  height: 22px;
+  margin: 8px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-decoration: none;
+  background-color: transparent;
+  font-size: 14px;
+  color: #8c8c8c;
+  border-radius: 5px;
+  transition: 450ms linear;
+}
+.signin__link svg {
+  width: 17px;
+  height: 17px;
+  margin-left: 5px;
+  fill: #8c8c8c;
+  transition: 500ms linear;
+}
+.signin__link p {
+  width: 110px;
+  text-align: center;
+}
+.signin__link:hover, .signin__link:focus {
+  color: white;
+}
+.signin__link:hover svg, .signin__link:focus svg {
+  fill: white;
+}
+.signin__link--google {
+  border: 1px solid red;
+  box-shadow: 0 0 0 1px white, 0 0 0 2px red;
+}
+.signin__link--google svg {
+  fill: red;
+}
+.signin__link--google:hover, .signin__link--google:focus {
+  background-color: red;
+}
+.signin__link--twitter {
+  border: 1px solid #6b6b6b;
+  box-shadow: 0 0 0 1px white, 0 0 0 2px #6b6b6b;
+}
+.signin__link--twitter svg {
+  fill: #6b6b6b;
+}
+.signin__link--twitter:hover, .signin__link--twitter:focus {
+  background-color: #6b6b6b;
+}
+.signin__link--facebook {
+  border: 1px solid #6b6b6b;
+  box-shadow: 0 0 0 1px white, 0 0 0 2px #6b6b6b;
+}
+.signin__link--facebook svg {
+  fill: #6b6b6b;
+}
+.signin__link--facebook:hover, .signin__link--facebook:focus {
+  background-color: #6b6b6b;
+}
+.signin__link--linkedin {
+  border: 1px solid #6b6b6b;
+  box-shadow: 0 0 0 1px white, 0 0 0 2px #6b6b6b;
+}
+.signin__link--linkedin svg {
+  fill: #6b6b6b;
+}
+.signin__link--linkedin:hover, .signin__link--linkedin:focus {
+  background-color: #6b6b6b;
+}
+.signin__link--github {
+  border: 1px solid #6b6b6b;
+  box-shadow: 0 0 0 1px white, 0 0 0 2px #6b6b6b;
+}
+.signin__link--github svg {
+  fill: #6b6b6b;
+}
+.signin__link--github:hover, .signin__link--github:focus {
+  background-color: #6b6b6b;
+}
+
+/*# sourceMappingURL=SignInProvidersList.css.map */

@@ -1,0 +1,88 @@
+.form {
+  width: 100%;
+  margin: 5px 0;
+  display: flex;
+  flex-direction: column;
+}
+.form__label {
+  font-size: 14px;
+  line-height: 14px;
+  color: #adadad;
+}
+.form__input {
+  width: auto;
+  height: auto;
+  padding: 1px 5px;
+  box-sizing: border-box;
+  font-size: 14px;
+  color: #252525;
+  border: 1px solid #adadad;
+  border-radius: 5px;
+  transition: 300ms linear;
+}
+.form__input:focus {
+  border: 1px solid #6b6b6b;
+  background-color: #ffded0;
+}
+.form__file {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  z-index: -10;
+}
+.form__fileSelector {
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  overflow: hidden;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  color: black;
+  background-color: #6f6fff;
+  border: 1px solid #adadad;
+  border-radius: 5px;
+  transition: 300ms linear;
+}
+.form__fileSelector svg {
+  width: 15px;
+  height: 12px;
+  margin-right: 5px;
+  fill: black;
+  transition: 300ms linear;
+}
+.form__fileSelector:hover, .form__fileSelector:focus {
+  background-color: #2c2cd4;
+  color: white;
+}
+.form__fileSelector:hover svg, .form__fileSelector:focus svg {
+  fill: white;
+}
+.form__button {
+  box-sizing: border-box;
+  width: 90px;
+  height: auto;
+  margin: 0;
+  padding: 1px 5px;
+  text-decoration: none;
+  font-size: 14px;
+  border: 1px solid #8c8c8c;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 300ms linear;
+  margin: 0 0 5px 5px;
+  align-self: flex-end;
+}
+.form__button--center {
+  align-self: center;
+}
+.form__error {
+  font-size: 8px;
+  color: red;
+  align-self: flex-end;
+}
+
+/*# sourceMappingURL=form.css.map */

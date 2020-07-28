@@ -1,0 +1,259 @@
+.myPage {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+.myPage__header {
+  width: 100%;
+  position: relative;
+  top: -1px;
+  left: 0;
+}
+.myPage__main {
+  width: 98%;
+  min-height: 10vw;
+  margin: 1vw auto 8.5vw auto;
+}
+.myPage__footer {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.myPageMain {
+  padding: 1vw;
+  border-radius: 5px;
+}
+.myPageMain__title {
+  display: inline-block;
+}
+.myPageMain__error, .myPageMain__message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 20vw;
+  color: #252525;
+}
+.myPageMain__tests, .myPageMain__results, .myPageMain__users, .myPageMain__friends {
+  width: 100%;
+  margin: 1vw 0;
+}
+
+.myTable__thead {
+  display: grid;
+  grid-column-gap: 0.37vw;
+}
+.myTable__thead--tests {
+  grid-template-columns: 1.8fr 6.9fr 1.8fr 1.5fr;
+}
+.myTable__thead--results {
+  grid-template-columns: 1.8fr 1fr 6.9fr 1.3fr 1fr;
+}
+.myTable__thead--users {
+  grid-template-columns: 2fr 7fr 1fr 1fr 1fr;
+}
+.myTable__thead--friends {
+  grid-template-columns: 1.8fr 5.7fr 1fr 2fr 1.5fr;
+}
+.myTable__thead > p {
+  width: 100%;
+  font-size: 1.48vw;
+  line-height: 1.85vw;
+  font-weight: bold;
+  text-align: center;
+  word-wrap: break-word;
+  cursor: pointer;
+  background-color: #8c8c8c;
+  color: #252525;
+  transition: 200ms linear;
+}
+.myTable__thead > p:hover {
+  color: #0b0ba7;
+}
+.myTable__trow {
+  width: 100%;
+  margin-top: 0.37vw;
+  display: grid;
+  grid-column-gap: 0.37vw;
+  text-decoration: none;
+}
+.myTable__trow--tests {
+  grid-template-columns: 1.8fr 6.9fr 1.8fr 1.5fr;
+}
+.myTable__trow--results {
+  grid-template-columns: 1.8fr 1fr 6.9fr 1.3fr 1fr;
+}
+.myTable__trow--users {
+  grid-template-columns: 2fr 7fr 1fr 1fr 1fr;
+}
+.myTable__trow--friends {
+  grid-template-columns: 1.8fr 5.7fr 1fr 2fr 1.5fr;
+}
+.myTable__trow > p {
+  width: 100%;
+  padding: 0 3px;
+  font-size: 1.33vw;
+  line-height: 1.48vw;
+  text-align: left;
+  color: #252525;
+  transition: 300ms linear;
+}
+.myTable__trow--id {
+  font-family: monospace;
+}
+.myTable__trow--type, .myTable__trow--status, .myTable__trow--date, .myTable__trow--result {
+  text-align: center !important;
+  justify-content: center;
+}
+.myTable__trow:nth-child(odd) > p {
+  background-color: #d1d1d1;
+}
+.myTable__trow:nth-child(even) > p {
+  background-color: #e7e7e7;
+}
+.myTable__trow:hover {
+  cursor: pointer;
+}
+.myTable__trow:hover > p {
+  background-color: #acacff;
+}
+
+@media screen and (max-width: 450px) {
+  .myPage__main {
+    min-height: 50vh;
+    margin: 50px auto 15vw auto;
+  }
+
+  .myTable__thead {
+    grid-column-gap: 2px;
+  }
+  .myTable__thead--tests {
+    grid-template-columns: 64% 15% 20%;
+  }
+  .myTable__thead--results {
+    grid-template-columns: 16% 69% 14%;
+  }
+  .myTable__thead--users {
+    grid-template-columns: 20% 48% 15% 15%;
+  }
+  .myTable__thead--friends {
+    grid-template-columns: 59% 20% 20%;
+  }
+  .myTable__thead > p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 5.8vw;
+    font-size: 3.6vw;
+    line-height: 3.6vw;
+  }
+  .myTable__trow {
+    grid-column-gap: 2px;
+  }
+  .myTable__trow--tests {
+    grid-template-columns: 64% 15% 20%;
+  }
+  .myTable__trow--results {
+    grid-template-columns: 16% 69% 14%;
+  }
+  .myTable__trow--users {
+    grid-template-columns: 20% 48% 15% 15%;
+  }
+  .myTable__trow--friends {
+    grid-template-columns: 59% 20% 20%;
+  }
+  .myTable__trow > p {
+    display: flex;
+    align-items: center;
+    min-height: 8.9vw;
+    font-size: 3.1vw;
+    line-height: 3.1vw;
+  }
+  .myTable__trow--date, .myTable__trow--status, .myTable__trow--type {
+    font-size: 2.22vw !important;
+  }
+
+  .lr_inv {
+    display: none !important;
+  }
+
+  .lr_small {
+    justify-content: flex-start !important;
+    font-size: 2.7vw !important;
+    overflow: hidden;
+  }
+}
+@media screen and (min-width: 451px) and (max-width: 750px) {
+  .myPage__main {
+    min-height: 50vh;
+    margin: 25px auto 10vw auto;
+  }
+
+  .myTable__thead {
+    grid-column-gap: 2px;
+  }
+  .myTable__thead--tests {
+    grid-template-columns: 19% 55% 12% 13%;
+  }
+  .myTable__thead--results {
+    grid-template-columns: 19% 14% 53% 13%;
+  }
+  .myTable__thead--users {
+    grid-template-columns: 19% 54% 13% 13%;
+  }
+  .myTable__thead--friends {
+    grid-template-columns: 19% 49% 12% 19%;
+  }
+  .myTable__thead > p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 5vw;
+    font-size: 3vw;
+    line-height: 3vw;
+  }
+  .myTable__trow {
+    grid-column-gap: 2px;
+  }
+  .myTable__trow--tests {
+    grid-template-columns: 19% 55% 12% 13%;
+  }
+  .myTable__trow--results {
+    grid-template-columns: 19% 14% 53% 13%;
+  }
+  .myTable__trow--users {
+    grid-template-columns: 19% 54% 13% 13%;
+  }
+  .myTable__trow--friends {
+    grid-template-columns: 19% 49% 12% 19%;
+  }
+  .myTable__trow > p {
+    display: flex;
+    align-items: center;
+    min-height: 40px;
+    font-size: 2.5vw;
+    line-height: 2.5vw;
+  }
+  .myTable__trow--date, .myTable__trow--status, .myTable__trow--type {
+    font-size: 2.22vw !important;
+  }
+
+  .mr_inv {
+    display: none !important;
+  }
+
+  .mr_small {
+    font-size: 2.5vw !important;
+    overflow: hidden;
+  }
+
+  .mr_xsmall {
+    font-size: 1.8vw !important;
+    overflow: hidden;
+  }
+}
+
+/*# sourceMappingURL=UserPages.css.map */

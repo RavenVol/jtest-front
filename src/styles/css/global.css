@@ -1,0 +1,421 @@
+* {
+  box-sizing: border-box;
+}
+
+.glass {
+  border: 1px inset #242424;
+  box-shadow: 0 0 4px 2px #000000;
+  color: white;
+}
+.glass--mate {
+  backdrop-filter: blur(4px) grayscale(100%);
+}
+.glass--dark {
+  background-color: #000000aa;
+}
+.glass--middle {
+  background-color: #00000077;
+}
+.glass--light {
+  background-color: #ffffffdd;
+}
+.glass--greenBottle {
+  background-color: #1d6b1d80;
+}
+.glass--yellow {
+  background-color: #d4c70e80;
+}
+.glass--blue {
+  background-color: #0e6ad480;
+}
+.glass--blue-deep {
+  background-color: #003c80a8;
+}
+.glass--blue-light {
+  background-color: #6193cc80;
+}
+.glass--red {
+  background-color: #ff000080;
+}
+
+.windowTitle {
+  box-sizing: border-box;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: transparent;
+  text-shadow: 0px 0px 2px #adadad;
+  transition: 300ms linear;
+}
+.windowTitle--left {
+  writing-mode: vertical-lr;
+  transform: rotateZ(180deg);
+}
+.windowTitle--right {
+  writing-mode: vertical-lr;
+}
+
+.preambula {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  color: #6b6b6b;
+}
+
+.menuBtn {
+  box-sizing: border-box;
+  width: 100%;
+  height: 30px;
+  margin: 0;
+  padding: 1px 5px;
+  text-decoration: none;
+  font-size: 14px;
+  border: 1px solid #8c8c8c;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 300ms linear;
+  position: relative;
+  overflow: hidden;
+  margin: 2px 0;
+  padding: 0 15px;
+  box-shadow: 0 1px 2px 1px #000000;
+  color: #adadad;
+}
+.menuBtn:after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to top right, #ffffff00 30%, #ffffffdd 50%, #ffffff00 70%);
+  background-repeat: no-repeat;
+}
+.menuBtn:hover:after {
+  transition: 400ms linear;
+  top: -100%;
+}
+.menuBtn--left {
+  border-right: none;
+  border-radius: 5px 0 0 5px;
+}
+.menuBtn--right {
+  border-left: none;
+  border-radius: 0 5px 5px 0;
+}
+.menuBtn:hover {
+  color: white;
+}
+.menuBtn:active {
+  border: 1px outset #242424;
+}
+
+.controlBtn {
+  box-sizing: border-box;
+  width: 100px;
+  height: 30px;
+  margin: 0;
+  padding: 1px 5px;
+  text-decoration: none;
+  font-size: 16px;
+  border: 1px solid #8c8c8c;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 300ms linear;
+  position: relative;
+  overflow: hidden;
+}
+.controlBtn:after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to top right, #ffffff00 30%, #ffffffdd 50%, #ffffff00 70%);
+  background-repeat: no-repeat;
+}
+.controlBtn:hover:after {
+  transition: 400ms linear;
+  top: -100%;
+}
+
+.BtnColors--blue {
+  background-color: #6f6fff;
+  color: white;
+}
+.BtnColors--blue:hover, .BtnColors--blue:focus {
+  background-color: #2c2cd4;
+}
+.BtnColors--green {
+  background-color: #90c790;
+  color: white;
+}
+.BtnColors--green:hover, .BtnColors--green:focus {
+  background-color: #4ebb4e;
+}
+.BtnColors--red {
+  background-color: #ff4949;
+  color: white;
+}
+.BtnColors--red:hover, .BtnColors--red:focus {
+  background-color: #ff3434;
+}
+.BtnColors--disabled {
+  cursor: default;
+  background-color: #adadad;
+  color: white;
+}
+
+.defaultLabel {
+  font-size: 16px;
+  line-height: 16px;
+  color: #252525;
+}
+.defaultLabel--withHelp:hover {
+  cursor: help;
+}
+
+.defaultInput {
+  width: 100%;
+  height: 25px;
+  padding: 1px 5px;
+  box-sizing: border-box;
+  font-size: 20px;
+  color: #252525;
+  border: 1px solid #adadad;
+  border-radius: 5px;
+  transition: 300ms linear;
+}
+.defaultInput:focus {
+  border: 1px solid #6b6b6b;
+  background-color: #ffded0;
+}
+
+.sectionForm {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: 10px;
+}
+.sectionForm__questionName {
+  display: grid;
+  grid-template-columns: 3fr 9fr;
+}
+.sectionForm__questionTimeOut {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr 7fr;
+}
+.sectionForm__questionType {
+  display: grid;
+  grid-template-columns: 3fr 9fr;
+  grid-template-areas: "label typeOoM" "label typeMoM" "label typeSO" "label typeFM";
+}
+.sectionForm__questionType--label {
+  grid-area: label;
+}
+.sectionForm__questionType--typeOoM {
+  grid-area: typeOoM;
+}
+.sectionForm__questionType--typeMoM {
+  grid-area: typeMoM;
+}
+.sectionForm__questionType--typeSO {
+  grid-area: typeSO;
+}
+.sectionForm__questionType--typeFM {
+  grid-area: typeFM;
+}
+
+.checkBox {
+  position: relative;
+  width: 2.22vw;
+  height: 2.22vw;
+  margin: 0.37vw 0;
+  background-color: #ffffffb0;
+  border: 1px inset #242424;
+  border-radius: 5px;
+  box-shadow: 0 0 0.37vw 2px #ffffffb0;
+}
+.checkBox > svg {
+  width: 3.7vw;
+  height: 3.7vw;
+  position: absolute;
+  bottom: 0;
+  left: -0.74vw;
+  fill: #b3f334;
+  animation: select 300ms linear forwards;
+}
+@keyframes select {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.colorSchema--light {
+  background-color: #ffffffcc;
+  color: #252525;
+}
+.colorSchema--dark {
+  background-color: #000000cc;
+  color: #eeeeee;
+}
+
+.withStyles strong, .withStyles b {
+  font-weight: 600;
+}
+.withStyles i {
+  font-style: italic;
+}
+.withStyles a {
+  color: blue;
+  text-decoration: underline;
+}
+.withStyles h2 {
+  font-size: 3vw;
+}
+.withStyles h3 {
+  font-size: 2.5vw;
+}
+.withStyles h4 {
+  font-size: 2vw;
+}
+.withStyles ul {
+  margin: 0.37vw;
+  padding: 0 0 0 1.48vw;
+  list-style-type: disc;
+  list-style-position: outside;
+}
+.withStyles ol {
+  margin: 0.37vw;
+  padding: 0 0 0 2.5vw;
+  list-style-type: decimal;
+  list-style-position: outside;
+}
+
+@media screen and (max-width: 450px) {
+  .glass {
+    box-shadow: 0 0 3px 0 #000000;
+  }
+
+  .controlBtn {
+    box-sizing: border-box;
+    width: 23vw;
+    height: 6vw;
+    margin: 0;
+    padding: 1px 5px;
+    text-decoration: none;
+    font-size: 4vw;
+    border: 1px solid #8c8c8c;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 300ms linear;
+    position: relative;
+    overflow: hidden;
+  }
+  .controlBtn:after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to top right, #ffffff00 30%, #ffffffdd 50%, #ffffff00 70%);
+    background-repeat: no-repeat;
+  }
+  .controlBtn:hover:after {
+    transition: 400ms linear;
+    top: -100%;
+  }
+
+  .defaultLabel {
+    font-size: 4vw;
+    line-height: 4vw;
+    color: #252525;
+  }
+
+  .checkBox {
+    width: 7vw;
+    height: 7vw;
+    margin: 1.11vw 0;
+    box-shadow: 0 0 1.11vw 2px #ffffffb0;
+  }
+  .checkBox > svg {
+    width: 11vw;
+    height: 11vw;
+    left: -2.22vw;
+  }
+}
+@media screen and (min-width: 451px) and (max-width: 750px) {
+  .glass {
+    box-shadow: 0 0 3px 0 #000000;
+  }
+
+  .controlBtn {
+    box-sizing: border-box;
+    width: 17vw;
+    height: 5vw;
+    margin: 0;
+    padding: 1px 5px;
+    text-decoration: none;
+    font-size: 3vw;
+    border: 1px solid #8c8c8c;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 300ms linear;
+    position: relative;
+    overflow: hidden;
+  }
+  .controlBtn:after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to top right, #ffffff00 30%, #ffffffdd 50%, #ffffff00 70%);
+    background-repeat: no-repeat;
+  }
+  .controlBtn:hover:after {
+    transition: 400ms linear;
+    top: -100%;
+  }
+
+  .defaultLabel {
+    font-size: 3vw;
+    line-height: 3vw;
+    color: #252525;
+  }
+
+  .checkBox {
+    width: 5vw;
+    height: 5vw;
+    margin: 1.11vw 0;
+    box-shadow: 0 0 1.11vw 2px #ffffffb0;
+  }
+  .checkBox > svg {
+    width: 7vw;
+    height: 7vw;
+    left: -1vw;
+  }
+}
+
+/*# sourceMappingURL=global.css.map */

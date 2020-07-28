@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
+
+@import './variables.scss';
+
+.animatedResult {
+  width: 35.5vw;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+
+  &__integer {
+    font-family: 'Courier Prime', monospace;
+    letter-spacing: -0.15em;
+  }
+
+  &__fractional {
+    margin-right: 0.74vw;
+    font-family: 'Courier Prime', monospace;
+    letter-spacing: -0.15em;
+  }
+}

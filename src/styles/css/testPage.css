@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;1,300&display=swap");
+.testsPage {
+  width: 100%;
+}
+.testsPage__header {
+  width: 100%;
+  margin-top: -1px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+.testsPage__main {
+  width: 100%;
+  margin-top: 8.5vw;
+}
+.testsPage__footer {
+  width: 100%;
+}
+
+.testsPageMain__section {
+  width: 100%;
+  margin: 3vw 0 7vw 0;
+}
+.testsPageMain__search {
+  width: 40vw;
+  margin: 0 auto 0 auto;
+}
+.testsPageMain__title {
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 5vw;
+  font-style: italic;
+  text-align: center;
+  color: white;
+}
+.testsPageMain__listWrap {
+  width: 100%;
+  position: relative;
+}
+.testsPageMain__listWrap--trapezLeft {
+  clip-path: polygon(0% 0%, 95% 0%, 100% 100%, 5% 100%);
+}
+.testsPageMain__listWrap--trapezRight {
+  clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
+}
+.testsPageMain__list {
+  width: 90%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-items: center;
+}
+.testsPageMain__button {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  font-size: 1.5vw;
+  color: #3f57d2;
+  background: none;
+  text-decoration: none;
+  font-weight: bold;
+  border: none;
+  transition: 200ms linear;
+  z-index: 5;
+}
+.testsPageMain__button:hover {
+  color: orangered;
+}
+.testsPageMain__button--less {
+  top: 0;
+}
+.testsPageMain__button--more {
+  bottom: 0;
+}
+
+@media screen and (max-width: 750px) {
+  .testsPage {
+    overflow: hidden;
+  }
+  .testsPage__main {
+    margin-top: 65px;
+  }
+
+  .testsPageMain__search {
+    width: 90vw;
+  }
+  .testsPageMain__title {
+    font-size: 6vw;
+  }
+  .testsPageMain__listWrap {
+    margin: 2vw auto 0 auto;
+    padding: 4vw 0;
+    width: 98%;
+  }
+  .testsPageMain__listWrap--trapezLeft {
+    clip-path: none;
+  }
+  .testsPageMain__listWrap--trapezRight {
+    clip-path: none;
+  }
+  .testsPageMain__list {
+    width: 97%;
+    grid-template-columns: 1fr 1fr;
+  }
+  .testsPageMain__button {
+    font-size: 5vw;
+  }
+}
+
+/*# sourceMappingURL=testPage.css.map */

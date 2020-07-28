@@ -1,0 +1,77 @@
+.testCheck {
+  width: 100%;
+  display: grid;
+  grid-template-areas: "label message status";
+  grid-template-columns: 4.5fr 6.5fr 1fr;
+  grid-gap: 0.74vw;
+  justify-content: start;
+  align-items: start;
+}
+.testCheck--clickable {
+  cursor: pointer;
+}
+.testCheck--clickable:hover {
+  color: blue;
+}
+.testCheck--clickable:hover .testCheck__label {
+  color: blue;
+  cursor: pointer;
+}
+.testCheck__label {
+  grid-area: label;
+  font-size: 1.18vw !important;
+}
+.testCheck__message {
+  grid-area: message;
+  font-size: 1.18vw;
+}
+.testCheck__status {
+  grid-area: status;
+  justify-self: center;
+  align-self: center;
+  font-size: 1.18vw;
+}
+.testCheck__status--OK {
+  color: #b3f334;
+}
+.testCheck__status--Error {
+  color: red;
+}
+.testCheck__status--Warn {
+  color: yellow;
+}
+
+@media screen and (max-width: 450px) {
+  .testCheck {
+    grid-template-columns: 37% 52% 9%;
+    grid-gap: 1%;
+    align-items: center;
+  }
+  .testCheck__label {
+    font-size: 3.5vw !important;
+  }
+  .testCheck__message {
+    font-size: 4vw;
+  }
+  .testCheck__status {
+    font-size: 4vw;
+  }
+}
+@media screen and (min-width: 451px) and (max-width: 750px) {
+  .testCheck {
+    grid-template-columns: 37% 52% 9%;
+    grid-gap: 0.5%;
+    align-items: center;
+  }
+  .testCheck__label {
+    font-size: 2.5vw !important;
+  }
+  .testCheck__message {
+    font-size: 2.5vw;
+  }
+  .testCheck__status {
+    font-size: 2.5vw;
+  }
+}
+
+/*# sourceMappingURL=saveTest.css.map */

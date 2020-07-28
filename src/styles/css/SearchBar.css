@@ -1,0 +1,250 @@
+.searchBar {
+  width: 100%;
+  height: 100%;
+  padding: 1% 1.7%;
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+  border-radius: 5px;
+}
+.searchBar--small {
+  box-shadow: none !important;
+}
+.searchBar__input--big {
+  width: 80%;
+  height: auto;
+  padding: 1px 5px;
+  box-sizing: border-box;
+  font-size: 2vw;
+  color: #252525;
+  border: 1px solid #adadad;
+  border-radius: 5px;
+  transition: 300ms linear;
+  margin-right: 0.25vw;
+}
+.searchBar__input--big:focus {
+  border: 1px solid #6b6b6b;
+  background-color: #ffded0;
+}
+.searchBar__input--small {
+  width: 85%;
+  height: auto;
+  padding: 1px 5px;
+  box-sizing: border-box;
+  font-size: 1vw;
+  color: #252525;
+  border: 1px solid #adadad;
+  border-radius: 5px;
+  transition: 300ms linear;
+  margin-right: 0.125vw;
+}
+.searchBar__input--small:focus {
+  border: 1px solid #6b6b6b;
+  background-color: #ffded0;
+}
+.searchBar__btn {
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.searchBar__btn:after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to top right, #ffffff00 30%, #ffffffdd 50%, #ffffff00 70%);
+  background-repeat: no-repeat;
+}
+.searchBar__btn:hover:after {
+  transition: 400ms linear;
+  top: -100%;
+}
+.searchBar__btn--big {
+  box-sizing: border-box;
+  width: 20%;
+  height: auto;
+  margin: 0;
+  padding: 1px 5px;
+  text-decoration: none;
+  font-size: 1.5vw;
+  border: 1px solid #8c8c8c;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 300ms linear;
+}
+.searchBar__btn--big > svg {
+  height: 2.1vw;
+  fill: white;
+}
+.searchBar__btn--small {
+  box-sizing: border-box;
+  width: 15%;
+  height: auto;
+  margin: 0;
+  padding: 1px 5px;
+  text-decoration: none;
+  font-size: 0.75vw;
+  border: 1px solid #8c8c8c;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 300ms linear;
+}
+.searchBar__btn--small > svg {
+  height: 1vw;
+  fill: white;
+}
+.searchBar__btn--small > p {
+  display: none;
+}
+
+@media screen and (max-width: 450px) {
+  .searchBar__input--big {
+    width: 80%;
+    height: auto;
+    padding: 1px 5px;
+    box-sizing: border-box;
+    font-size: 5vw;
+    color: #252525;
+    border: 1px solid #adadad;
+    border-radius: 5px;
+    transition: 300ms linear;
+  }
+  .searchBar__input--big:focus {
+    border: 1px solid #6b6b6b;
+    background-color: #ffded0;
+  }
+  .searchBar__input--small {
+    width: 85%;
+    height: auto;
+    padding: 1px 5px;
+    box-sizing: border-box;
+    font-size: 4vw;
+    color: #252525;
+    border: 1px solid #adadad;
+    border-radius: 5px;
+    transition: 300ms linear;
+  }
+  .searchBar__input--small:focus {
+    border: 1px solid #6b6b6b;
+    background-color: #ffded0;
+  }
+  .searchBar__btn--big {
+    box-sizing: border-box;
+    width: 20%;
+    height: auto;
+    margin: 0;
+    padding: 1px 5px;
+    text-decoration: none;
+    font-size: 3vw;
+    border: 1px solid #8c8c8c;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 300ms linear;
+  }
+  .searchBar__btn--big > svg {
+    height: 5vw;
+  }
+  .searchBar__btn--small {
+    box-sizing: border-box;
+    width: 15%;
+    height: auto;
+    margin: 0;
+    padding: 1px 5px;
+    text-decoration: none;
+    font-size: 3.75vw;
+    border: 1px solid #8c8c8c;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 300ms linear;
+  }
+  .searchBar__btn--small > svg {
+    height: 4vw;
+  }
+}
+@media screen and (min-width: 451px) and (max-width: 750px) {
+  .searchBar__input--big {
+    width: 90%;
+    height: auto;
+    padding: 1px 5px;
+    box-sizing: border-box;
+    font-size: 2.5vw;
+    color: #252525;
+    border: 1px solid #adadad;
+    border-radius: 5px;
+    transition: 300ms linear;
+  }
+  .searchBar__input--big:focus {
+    border: 1px solid #6b6b6b;
+    background-color: #ffded0;
+  }
+  .searchBar__input--small {
+    width: 90%;
+    height: auto;
+    padding: 1px 5px;
+    box-sizing: border-box;
+    font-size: 3vw;
+    color: #252525;
+    border: 1px solid #adadad;
+    border-radius: 5px;
+    transition: 300ms linear;
+  }
+  .searchBar__input--small:focus {
+    border: 1px solid #6b6b6b;
+    background-color: #ffded0;
+  }
+  .searchBar__btn--big {
+    box-sizing: border-box;
+    width: 20%;
+    height: auto;
+    margin: 0;
+    padding: 1px 5px;
+    text-decoration: none;
+    font-size: 2.5vw;
+    border: 1px solid #8c8c8c;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 300ms linear;
+  }
+  .searchBar__btn--big > svg {
+    height: 4vw;
+  }
+  .searchBar__btn--small {
+    box-sizing: border-box;
+    width: 15%;
+    height: auto;
+    margin: 0;
+    padding: 1px 5px;
+    text-decoration: none;
+    font-size: 3vw;
+    border: 1px solid #8c8c8c;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 300ms linear;
+  }
+  .searchBar__btn--small > svg {
+    height: 3vw;
+  }
+}
+
+/*# sourceMappingURL=SearchBar.css.map */

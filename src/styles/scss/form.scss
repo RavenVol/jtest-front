@@ -1,0 +1,78 @@
+@import './variables.scss';
+@import './mixins.scss';
+
+.form {
+  width: 100%;
+  margin: 5px 0;
+
+  display: flex;
+  flex-direction: column;
+
+  &__label {
+    @include defaultLabel(14px, $cd_grey_l);
+  }
+
+  &__input {
+    @include defaultInput(auto, auto, 14px);
+  }
+
+  &__file {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    z-index: -10;
+  }
+
+  &__fileSelector {
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    overflow: hidden;
+
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    color: black;
+
+    background-color: $cd_blue_l;
+
+    border: 1px solid $cd_grey_l;
+    border-radius: $defaultRadius;
+
+    transition: 300ms linear;
+
+    & svg {
+      width: 15px;
+      height: 12px;
+      margin-right: 5px;
+      fill: black;
+
+      transition: 300ms linear;
+    }
+
+    &:hover, &:focus {
+      background-color: $cd_blue_m;
+      color: white;
+
+      & svg {
+        fill: white;
+      }
+    }
+  }
+
+  &__button {
+    @include defaultBtn(90px, auto, 14px);
+    margin: 0 0 5px 5px;
+    align-self: flex-end;
+
+    &--center {
+      align-self: center;
+    }
+  }
+
+  &__error {
+    font-size: 8px;
+    color: red;
+    align-self: flex-end;
+  }
+}

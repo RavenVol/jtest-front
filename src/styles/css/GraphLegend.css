@@ -1,0 +1,98 @@
+.graphLegend {
+  width: 100%;
+  margin-top: 1.11vw;
+  padding: 0 0.37vw;
+}
+.graphLegend__title {
+  width: 100%;
+  font-size: 1.33vw;
+  line-height: 2.96vw;
+  color: #eeeeee;
+  text-align: center;
+}
+.graphLegend__main {
+  width: 100%;
+}
+.graphLegend__main--single {
+  display: flex;
+  flex-direction: column;
+}
+.graphLegend__main--double {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 0.74vw;
+}
+.graphLegend__row {
+  display: grid;
+  grid-gap: 0.74vw;
+  margin-bottom: 0.74vw;
+}
+.graphLegend__row--single {
+  grid-template-columns: 1.1fr 9fr;
+}
+.graphLegend__row--double {
+  grid-template-columns: 2.2fr 8fr;
+}
+.graphLegend__itemName {
+  max-height: 3.7vw;
+  font-size: 1.48vw;
+  color: #eeeeee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 450px) {
+  .graphLegend {
+    margin-top: 1.11vw;
+    padding: 0 0.37vw;
+  }
+  .graphLegend__title {
+    font-size: 3vw;
+    line-height: 7vw;
+    color: #adadad;
+  }
+  .graphLegend__main--single, .graphLegend__main--double {
+    display: flex;
+    flex-direction: column;
+  }
+  .graphLegend__row {
+    grid-gap: 1vw;
+    margin-bottom: 1vw;
+  }
+  .graphLegend__row--single, .graphLegend__row--double {
+    grid-template-columns: 2fr 10fr;
+  }
+  .graphLegend__itemName {
+    max-height: 5vw;
+    font-size: 3vw;
+  }
+}
+@media screen and (min-width: 451px) and (max-width: 750px) {
+  .graphLegend {
+    margin-top: 0.5vw;
+    padding: 0 0.37vw;
+  }
+  .graphLegend__title {
+    font-size: 3vw;
+    line-height: 7vw;
+    color: #adadad;
+  }
+  .graphLegend__main--single, .graphLegend__main--double {
+    display: flex;
+    flex-direction: column;
+  }
+  .graphLegend__row {
+    grid-gap: 1vw;
+    margin-bottom: 1vw;
+  }
+  .graphLegend__row--single, .graphLegend__row--double {
+    grid-template-columns: 2fr 10fr;
+  }
+  .graphLegend__itemName {
+    max-height: 5vw;
+    font-size: 2.5vw;
+  }
+}
+
+/*# sourceMappingURL=GraphLegend.css.map */

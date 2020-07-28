@@ -1,0 +1,122 @@
+@import './variables.scss';
+
+.graphLegend {
+  width: 100%;
+  margin-top: 1.11vw;
+  padding: 0 0.37vw;
+
+  &__title {
+    width: 100%;
+    font-size: 1.33vw;
+    line-height: 2.96vw;
+    color: $cd_grey_el;
+    text-align: center;
+  }
+
+  &__main {
+    width: 100%;
+
+    &--single {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &--double {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 0.74vw;
+    }
+  }
+
+  &__row {
+    display: grid;
+    grid-gap: 0.74vw;
+    margin-bottom: 0.74vw;
+
+    &--single {
+      grid-template-columns: 1.1fr 9fr;
+    }
+    &--double {
+      grid-template-columns: 2.2fr 8fr;
+    }
+  }
+
+  &__itemName {
+    max-height: 3.7vw;
+
+    font-size: 1.48vw;
+    color: $cd_grey_el;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .graphLegend {
+    margin-top: 1.11vw;
+    padding: 0 0.37vw;
+  
+    &__title {
+      font-size: 3vw;
+      line-height: 7vw;
+      color: $cd_grey_l;
+    }
+  
+    &__main {
+      &--single, &--double {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  
+    &__row {
+      grid-gap: 1vw;
+      margin-bottom: 1vw;
+  
+      &--single, &--double {
+        grid-template-columns: 2fr 10fr;
+      }
+    }
+  
+    &__itemName {
+      max-height: 5vw;
+      font-size: 3vw;
+    }
+  }
+}
+
+@media screen and (min-width: 451px) and (max-width: 750px) {
+  .graphLegend {
+    margin-top: 0.5vw;
+    padding: 0 0.37vw;
+  
+    &__title {
+      font-size: 3vw;
+      line-height: 7vw;
+      color: $cd_grey_l;
+    }
+  
+    &__main {
+      &--single, &--double {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  
+    &__row {
+      grid-gap: 1vw;
+      margin-bottom: 1vw;
+  
+      &--single, &--double {
+        grid-template-columns: 2fr 10fr;
+      }
+    }
+  
+    &__itemName {
+      max-height: 5vw;
+      font-size: 2.5vw;
+    }
+  }
+}

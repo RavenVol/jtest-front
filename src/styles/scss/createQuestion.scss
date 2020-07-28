@@ -1,0 +1,337 @@
+@import './variables.scss';
+@import './mixins.scss';
+
+.createQuestion {
+  width: 100%;
+  height: 100%;
+  padding: 0 1.48vw;
+
+  display: grid;
+  grid-template-areas: 
+    "langMenu"
+    "main";
+  grid-template-columns: 1fr;
+  grid-template-rows: 1.85vw auto;
+  grid-row-gap: 0.74vw;
+
+  &__langMenu {
+    grid-area: langMenu;
+    display: flex;
+    flex-wrap: wrap;
+
+    & > button {
+      width: auto;
+      height: 1.48vw;
+      padding: 0 0.52vw;
+      margin: 0 0.37vw 0 0;
+      border-radius: $defaultRadius;
+      color: white;
+
+      &:first-child {
+        margin-right: 0.74vw;
+      }
+    }
+
+    @keyframes langMenuButtonAppear {
+      0% { opacity: 0; }
+      
+      33% { opacity: 0.5; }
+
+      66% { opacity: 0; }
+
+      100% { opacity: 1; }
+    }
+  }
+
+  &__main {grid-area: main;}
+}
+
+.questionConf {
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+  grid-template-areas: 
+    "preambula"
+    "main";
+  grid-template-rows: 1.85vw auto;
+  grid-row-gap: 0.74vw;
+
+  &__preambula {grid-area: preambula;}
+  &__main {grid-area: main;}
+
+  &Main {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-areas: 
+      "questionName"
+      "questionPosition"
+      "questionPrice"
+      "questionTimeOut"
+      "questionType";
+    grid-gap: 0.74vw;
+  
+    &__questionName {
+      grid-area: questionName;
+      display: grid;
+      grid-template-columns: 2fr 10fr;
+      align-items: center;
+    }
+
+    &__questionPosition {
+      grid-area: questionPosition;
+      display: grid;
+      grid-template-columns: 2fr 1fr 9fr;
+      align-items: center;
+    }
+
+    &__questionPrice {
+      grid-area: questionPrice;
+      display: grid;
+      grid-template-columns: 2fr 1fr 9fr;
+      align-items: center;
+    }
+  
+    &__questionTimeOut {
+      grid-area: questionTimeOut;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 8fr;
+      align-items: center;
+    }
+  
+    &__questionType {
+      grid-area: questionType;
+      display: grid;
+      grid-template-columns: 2fr 10fr;
+      grid-gap: 0.37vw;
+    }
+  }
+}
+
+.questionLang {
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+  grid-template-areas: 
+    "question"
+    "answers"
+    "addBtn";
+  grid-row-gap: 1.48vw;
+  
+  &__question {
+    grid-area: question;
+    display: grid;
+    grid-template-areas: 
+      "preambula"
+      "editor";
+    grid-template-rows: 1.85vw auto;
+    grid-row-gap: 0.74vw;
+  } 
+
+  &__answers { grid-area: answers; }
+
+  &__addBtn {
+    grid-area: addBtn;
+    width: auto !important;
+    justify-self: center;
+    margin-bottom: 0.37vw !important;
+  }
+
+  .answer {
+    display: grid;
+    grid-template-rows: 1.85vw auto;
+    grid-column-gap: 0.74vw;
+    align-items: center;
+    margin-bottom: 1.48vw;
+
+    &--oneofmany, &--manyofmany, &--setorder {
+      grid-template-areas: 
+        "preambula preambula preambula"
+        "beforeEditor answer delete";
+      grid-template-columns: 3.33vw auto 2.22vw;
+    }
+
+    &--freeanswer {
+      grid-template-areas: 
+        "preambula preambula"
+        "answer delete";
+      grid-template-columns: auto 2.22vw;
+    }
+
+    &--findmatch {
+      grid-template-areas: 
+        "preambula preambula preambula  preambula"
+        "answer    sign      equivalent delete";
+      grid-template-columns: 1fr 2.22vw 1fr 2.22vw;
+    }
+
+    &__preambula { grid-area: preambula; }
+    &__beforeEditor { grid-area: beforeEditor; }
+    &__answer { grid-area: answer; }
+    &__sign { grid-area: sign; }
+    &__equivalent { grid-area: equivalent; }
+    &__delete { grid-area: delete; }
+
+    &__delAnswerBtn {
+      @include defaultBtn(2.07vw, 2.07vw, 1.04vw);
+      @include blink();
+  
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  
+      & > svg {
+        height: 56%;
+      }
+    }
+    
+    &__order {
+      align-self: center; 
+      padding: 0 0 0 0.37vw;
+      text-align: right;
+      width: auto;
+      height: 1.85vw;
+      font-size: 1.48vw !important;
+      line-height: 1.48vw !important;
+
+      &--dublicate {
+        background-color: rgb(255, 196, 196);
+        &:focus {
+          background-color: rgb(255, 196, 196);
+        }
+      }
+    }
+  }
+}
+
+.preview {
+  width: 100%;
+  min-height: 3.7vw;
+}
+
+@media screen and (max-width: 750px) {
+  .createQuestion {
+    padding: 0 0.74vw;
+    grid-template-rows: 5vw auto;
+    grid-row-gap: 0.74vw;
+  
+    &__langMenu {
+      & > button {
+        height: 5vw;
+        padding: 0 0.7vw;
+        margin: 0 0.5vw 0 0;
+  
+        &:first-child {
+          margin-right: 2vw;
+        }
+      }
+    }
+  
+    &__main {grid-area: main;}
+  }
+  
+  .questionConf {
+    grid-template-rows: 4vw auto;
+    grid-row-gap: 1vw;
+  
+    &Main {
+      &__questionName { grid-template-columns: 20% 80%; }
+  
+      &__questionPosition { grid-template-columns: 60% 20% 20%; }
+  
+      &__questionPrice { grid-template-columns: 60% 20% 20%; }
+    
+      &__questionTimeOut { grid-template-columns: 60% 20% 20%; }
+    
+      &__questionType {
+        grid-template-columns: 25% 75%;
+        grid-gap: 0.37vw;
+      }
+    }
+  }
+  
+  .questionLang {
+    grid-row-gap: 2vw;
+    
+    &__question { grid-template-rows: 6vw auto; } 
+  
+    &__addBtn { min-height: 40px; }
+  
+    .answer {
+      display: grid;
+      grid-template-rows: 6vw auto;
+      margin-bottom: 2vw;
+  
+      &--oneofmany, &--manyofmany, &--setorder {
+        grid-template-columns: 8vw auto 8vw;
+      }
+  
+      &--freeanswer {
+        grid-template-columns: auto 8vw;
+      }
+  
+      &--findmatch {
+        grid-template-columns: 44% 2.5vw 44% 8vw;
+      }
+  
+      &__delAnswerBtn { @include defaultBtn(8vw, 8vw, 5vw); }
+      
+      &__order {
+        padding: 0.5vw;
+        width: auto;
+        height: 8vw;
+        font-size: 6vw !important;
+        line-height: 6vw !important;
+      }
+    }
+  }
+  
+  .preview { min-height: 9vw; }
+}
+
+@media screen and (min-width: 451px) and (max-width: 750px) {
+  .createQuestion {
+    &__langMenu { width: 89%; }
+  }
+  
+  .questionConf {
+    grid-template-rows: 4vw auto;
+  
+    &Main { &__questionName { grid-template-columns: 40% 60%; } }
+  }
+  
+  .questionLang {
+    grid-row-gap: 1vw;
+    
+    &__question { grid-template-rows: 4vw auto; } 
+  
+    .answer {
+      grid-template-rows: 4vw auto;
+      margin-bottom: 1vw;
+  
+      &--oneofmany, &--manyofmany, &--setorder {
+        grid-template-columns: 5.5vw auto 4.5vw;
+      }
+  
+      &--freeanswer {
+        grid-template-columns: auto 4.5vw;
+      }
+  
+      &--findmatch {
+        grid-template-columns: 44% 2vw 44% 5vw;
+      }
+  
+      &__delAnswerBtn { @include defaultBtn(4.5vw, 4.5vw, 3vw); }
+      
+      &__order {
+        height: 5vw;
+        font-size: 4vw !important;
+        line-height: 4vw !important;
+      }
+    }
+  }
+  
+  .preview { min-height: 6.5vw; }
+}

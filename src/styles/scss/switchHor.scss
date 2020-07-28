@@ -1,0 +1,99 @@
+@import './variables.scss';
+
+.switch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__label {
+    font-size: 1.18vw;
+    color: $cd_grey_l;
+
+    transition: 300ms linear;
+    &--active {
+      color: white;
+    }
+  }
+
+  &__radio {
+    display: none;
+  }
+
+  &__button {
+    box-sizing: content-box;
+    position: relative;
+    width: 4.44vw;
+    height: 2.22vw;
+    margin: 0 0.37vw;
+    background-color: $cd_grey_el;
+    border: 3px inset $cd_grey_m;
+    border-radius: 2.22vw;
+  }
+
+  &__circle {
+    position: absolute;
+    top: 0;
+    width: 2.22vw;
+    height: 2.22vw;
+    background-color: $cd_grey_el;
+    border: 3px outset $cd_grey_d;
+    border-radius: 2.22vw;
+
+    transition: 300ms linear;
+
+    &--left {
+      left: 0;
+    }
+    &--right {
+      left: 2.22vw;
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .switch {
+    &__label { font-size: 3.5vw; }
+  
+    &__button {
+      width: 10vw;
+      height: 5vw;
+      margin: 0 1vw;
+      border: 2px inset $cd_grey_m;
+      border-radius: 5vw;
+    }
+  
+    &__circle {
+      top: 0;
+      width: 5vw;
+      height: 5vw;
+      border: 2px outset $cd_grey_d;
+      border-radius: 5vw;
+      &--right { left: 5vw; }
+    }
+  }
+}
+
+@media screen and (min-width: 451px) and (max-width: 750px) {
+  .switch {
+    &__label { font-size: 2.2vw; }
+  
+    &__button {
+      width: 6vw;
+      height: 3vw;
+      margin: 0 0.5vw;
+      border: 2px inset $cd_grey_m;
+      border-radius: 3vw;
+    }
+  
+    &__circle {
+      top: 0;
+      width: 3vw;
+      height: 3vw;
+      border: 2px outset $cd_grey_d;
+      border-radius: 3vw;
+      &--right { left: 3vw; }
+    }
+  }
+}
+
+

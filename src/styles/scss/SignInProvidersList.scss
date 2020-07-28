@@ -1,0 +1,121 @@
+@import './variables.scss';
+.signin {
+  width: 100%;
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__title {
+    font-size: 14px;
+    color: $cd_grey_l;
+  }
+
+  &__list {
+    list-style-type: none;
+  }
+
+  &__link {
+    width: 160px;
+    height: 22px;
+    margin: 8px;
+    box-sizing: border-box;
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    text-decoration: none;
+    background-color: transparent;
+    font-size: 14px;
+    color: $cd_grey_m;
+
+    border-radius: $defaultRadius;
+    transition: 450ms linear;
+
+    & svg {
+      width: 17px;
+      height: 17px;
+      margin-left: 5px;
+      fill: $cd_grey_m;
+      transition: 500ms linear;
+    }
+
+    & p {
+      width: 110px;
+      text-align: center;
+    }
+
+    &:hover, &:focus {
+      color: white;
+      & svg {
+        fill: white;
+      }
+    }
+
+    &--google {
+      border: 1px solid red;
+      box-shadow: (0 0 0 1px white), (0 0 0 2px red);
+
+      & svg {
+        fill: red;
+      }
+
+      &:hover, &:focus {
+        background-color: red;
+      }
+    }
+
+    &--twitter {
+      border: 1px solid $cd_grey_d;
+      box-shadow: (0 0 0 1px white), (0 0 0 2px $cd_grey_d);
+
+      & svg {
+        fill: $cd_grey_d;
+      }
+
+      &:hover, &:focus {
+        background-color: $cd_grey_d;
+      }
+    }
+
+    &--facebook {
+      border: 1px solid $cd_grey_d;
+      box-shadow: (0 0 0 1px white), (0 0 0 2px $cd_grey_d);
+
+      & svg {
+        fill: $cd_grey_d;
+      }
+
+      &:hover, &:focus {
+        background-color: $cd_grey_d;
+      }
+    }
+
+    &--linkedin {
+      border: 1px solid $cd_grey_d;
+      box-shadow: (0 0 0 1px white), (0 0 0 2px $cd_grey_d);
+
+      & svg {
+        fill: $cd_grey_d;
+      }
+
+      &:hover, &:focus {
+        background-color: $cd_grey_d;
+      }
+    }
+
+    &--github {
+      border: 1px solid $cd_grey_d;
+      box-shadow: (0 0 0 1px white), (0 0 0 2px $cd_grey_d);
+
+      & svg {
+        fill: $cd_grey_d;
+      }
+
+      &:hover, &:focus {
+        background-color: $cd_grey_d;
+      }
+    }
+  }
+}

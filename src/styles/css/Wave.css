@@ -1,0 +1,77 @@
+.wave {
+  width: 100%;
+  height: 7.5vw;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-image: url("http://localhost:5124/api/pic/picwave_dark.png");
+  background-repeat: repeat-x;
+  background-size: 94.75vw 7.5vw;
+  animation: waveMove1 40s linear infinite;
+  opacity: 0.55;
+  z-index: -1;
+}
+.wave__wrap {
+  width: 100%;
+  height: 7.5vw;
+  overflow: hidden;
+  position: relative;
+}
+.wave--2 {
+  height: 6.5vw;
+  animation: waveMove2 20s linear infinite;
+  background-size: 106.6vw 6.5vw;
+  opacity: 0.45;
+  z-index: -2;
+}
+.wave--3 {
+  height: 5.5vw;
+  animation: waveMove3 20s linear infinite;
+  background-size: 66.6vw 5.5vw;
+  opacity: 0.25;
+  z-index: -3;
+}
+
+@keyframes waveMove1 {
+  0% {
+    background-position: top 0 left 94.75vw;
+  }
+  100% {
+    background-position: top 0 left 0;
+  }
+}
+@keyframes waveMove2 {
+  0% {
+    background-position: top 0 left 106.6vw;
+  }
+  100% {
+    background-position: top 0 left 0;
+  }
+}
+@keyframes waveMove3 {
+  0% {
+    background-position: top 0 left 66.6vw;
+  }
+  100% {
+    background-position: top 0 left 0;
+  }
+}
+@media screen and (max-width: 450px) {
+  .wave {
+    height: 10vw;
+    background-size: 94.75vw 10vw;
+  }
+  .wave__wrap {
+    height: 10vw;
+  }
+  .wave--2 {
+    height: 8vw;
+    background-size: 106.6vw 8vw;
+  }
+  .wave--3 {
+    height: 6vw;
+    background-size: 66.6vw 6vw;
+  }
+}
+
+/*# sourceMappingURL=Wave.css.map */
